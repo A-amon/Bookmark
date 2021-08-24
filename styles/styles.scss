@@ -119,6 +119,10 @@
     }
 
     @include tablet{
+        &-title{
+            font-size: 2rem;
+        }
+
         &__tabs{
             flex-direction: row;
         }

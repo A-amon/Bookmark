@@ -153,6 +153,9 @@ input, button {
 }
 
 @media screen and (min-width: 768px) {
+  .features-title {
+    font-size: 2rem;
+  }
   .features__tabs {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
