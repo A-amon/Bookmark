@@ -1,12 +1,13 @@
 {
     "version": 3,
-    "mappings": "AEAA,OAAO,CAAC,+EAAI",
+    "mappings": "AEAA,OAAO,CAAC,+EAAI;AGCZ,AAAA,CAAC,CAAA;EACG,MAAM,EAAC,CAAC;EACR,OAAO,EAAC,CAAC;EACT,UAAU,EAAE,UAAU;CACzB;;AAED,AAAA,CAAC,CAAA;EACG,WAAW,EAAE,GAAG;CACnB;;AAED,AAAA,EAAE,CAAA;EACE,UAAU,EAAE,IAAI;CACnB",
     "sources": [
         "styles.scss",
         "partials/_colors.scss",
         "partials/_typography.scss",
         "partials/_variables.scss",
-        "partials/_mixins.scss"
+        "partials/_mixins.scss",
+        "partials/_reset.scss"
     ],
     "names": [],
     "file": "styles.css"
