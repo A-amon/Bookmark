@@ -1,0 +1,12 @@
+
+@mixin laptop{
+    @media screen and (min-width:$d-desktop) {
+        @content;
+    }
+}
+
+@mixin tablet{
+    @media screen and (min-width:$d-tablet) {
+        @content;
+    }
+}
