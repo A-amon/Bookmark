@@ -7,11 +7,99 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="Bookmark">
     <meta property="og:description" content="Bookmark site">
+    <link rel="stylesheet" href="styles/styles.css">
     <title>Bookmark</title>
 </head>
 
 <body>
-
+    <main>
+        <section class="features">
+            <div class="container">
+                <h2 class="features-title">
+                    Features
+                </h2>
+                <p class="features-desc">
+                    Our aim to make it quick and easy for you to access your favourite websites.
+                    Your bookmarks sync between your devices so you can access them on the go.
+                </p>
+                <div class="features__tabs" role="tablist" aria-selected="true" aria-controls="bookmarking">
+                    <button class="features__tab" role="tab" aria-selected="true" aria-controls="bookmarking">
+                        Simple Bookmarking
+                    </button>
+                    <button class="features__tab" role="tab" tabindex="-1" aria-selected="false"
+                        aria-controls="searching">
+                        Speedy Searching
+                    </button>
+                    <button class="features__tab" role="tab" tabindex="-1" aria-selected="false"
+                        aria-controls="sharing">
+                        Easy Sharing
+                    </button>
+                </div>
+            </div>
+            <div id="bookmarking" class="features__tabpanel" tabindex="0">
+                <div class="container">
+                    <div class="features__image features__col">
+                        <img src="./assets/images/illustration-features-tab-1.svg" alt="" class="features__image-img"
+                            aria-hidden="true">
+                    </div>
+                    <div class="features__content features__col">
+                        <h3 class="features__tabpanel-title">
+                            Bookmark in one click
+                        </h3>
+                        <p class="features__tabpanel-desc">
+                            Organize your bookmarks however you like.
+                            Our simple drag-and-drop interface gives you complete control over how you manage your
+                            favourite sites.
+                        </p>
+                        <button class="features-button">
+                            More info
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="searching" class="features__tabpanel" tabindex="0" hidden>
+                <div class="container">
+                    <div class="features__image features__col">
+                        <img src="./assets/images/illustration-features-tab-2.svg" alt="" class="features__image-img"
+                            aria-hidden="true">
+                    </div>
+                    <div class="features__content features__col">
+                        <h3 class="features__tabpanel-title">
+                            Intelligent Search
+                        </h3>
+                        <p class="features__tabpanel-desc">
+                            Our powerful search feature will help you find saved sites in no time at all.
+                            No need to trawl through all of your bookmarks.
+                        </p>
+                        <button class="features-button">
+                            More info
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="sharing" class="features__tabpanel" tabindex="0" hidden>
+                <div class="container">
+                    <div class="features__image features__col">
+                        <img src="./assets/images/illustration-features-tab-3.svg" alt="" class="features__image-img"
+                            aria-hidden="true">
+                    </div>
+                    <div class="features__content features__col">
+                        <h3 class="features__tabpanel-title">
+                            Share your bookmarks
+                        </h3>
+                        <p class="features__tabpanel-desc">
+                            Easily share your bookmarks and collections with others.
+                            Create a shareable link that you can send at the click of a button.
+                        </p>
+                        <button class="features-button">
+                            More info
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="index.js"></script>
 </body>
 
 </html>
