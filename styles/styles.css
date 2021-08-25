@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap");
-* {
+* {    
+  Font-size: 18px;
+  font-family: 'Rubik', sans-serif;
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
@@ -12,5 +14,104 @@ p {
 
 li {
   list-style: none;
+}
+
+/* FAQs section */
+hr{
+  width: 40%;
+  margin:auto;
+}
+.faq-header{
+  text-align: center;
+}
+body>p,
+details>div
+{
+  padding-left:30%;
+  padding-right:30%;
+  color: hsl(229, 8%, 60%);
+}
+
+
+  summary{
+    padding-left: 30%;
+  }
+  summary:hover{
+    color:hsl(0, 94%, 66%);
+  }
+
+  details > summary{
+    display:flex;
+    justify-content:space-between;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    font-size: 1.25rem;
+    cursor: pointer;
+    list-style: none;
+  }
+  details > summary::after{
+    content:url(/assets/icons/icon-arrow.svg);
+    width: 1.5rem;
+    height: 1.5rem;
+    display:inline-flex;
+    transition: transform 0.3s ease;
+    padding-right: 42%;
+
+  }
+  details[open]>summary::after{
+    transform:rotate(180deg);
+  position: fixed;
+  }
+
+p{
+ text-align: center;
+}
+.wrapper{
+  display: flex;
+  justify-content: center;
+}
+.faq-btn{ 
+color: white;
+background-color:blue;
+padding: 14px;
+border-radius: 6px;
+}
+
+.faq-btn:hover{
+  color:blue;
+  background-color:white;
+  border:1px solid blue;
+}
+.contact{
+  background-color:hsl(231, 69%, 60%);
+  padding: 4rem;
+}
+.contact-header{
+  text-align: center;
+  color:white;
+  font-size: 2rem;
+  font-size: bold;
+}
+.contact-p{
+  letter-spacing: 6px;
+  color: white;
+}
+.check-btn{
+  color: white;
+background-color:hsl(0, 94%, 66%);
+padding: 14px;
+border-radius: 6px;
+}
+.check-btn:hover{
+  color:hsl(0, 94%, 66%);
+  background-color:white;
+  border:1px solid hsl(0, 94%, 66%);
+}
+#email{
+  padding: 14px;
+border-radius: 6px;
+}
+#email:focus{
+  border:5px solid hsl(0, 94%, 66%);
 }
 /*# sourceMappingURL=styles.css.map */
