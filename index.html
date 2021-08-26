@@ -7,21 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="Bookmark">
     <meta property="og:description" content="Bookmark site">
+    <link rel="shortcut icon" href="./assets/icons/favicon-32x32.png" type="image/png">
+    <link rel="stylesheet" href="./styles/styles.css">
     <title>Bookmark</title>
-    <!-- link css -->
-    <link rel="stylesheet" href="styles/styles.css">
-
-    <!-- link google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
     <!-- faq section -->
     <h2 class="faq-header">Frequently Asked Questions</h2>
     <p>Here are some of our FAQs. If you have any other questions you'd like answered please feel free to email us.</p>
-    <hr>
+
     <div class="summary">
         <details>
             <summary>What is Bookmark?</summary>
@@ -32,7 +28,6 @@
             </div>
         </details>
     </div>
-    <hr>
     <div class="summary">
         <details>
             <summary>How can I request a new browser?</summary>
@@ -43,7 +38,6 @@
             </div>
         </details>
     </div>
-    <hr>
     <div class="summary">
         <details>
             <summary>Is there a mobile app?</summary>
@@ -55,7 +49,6 @@
         </details>
     </div>
 
-    <hr>
     <div class="summary">
         <details>
             <summary>What about other Chromium browsers?</summary>
@@ -66,19 +59,26 @@
             </div>
         </details>
     </div>
-    <hr>
     <div class="wrapper">
         <button class="faq-btn" type="button" class="faq-btn">More info</button>
     </div>
+    <!-- contact section -->
     <div class="contact">
         <p class="contact-p">35,000+ ALREADY JOINED</p>
-              <p class="contact-header">Stay up-to-date with what <br>we're doing</p>
+        <p class="contact-header">Stay up-to-date with what <br>we're doing</p>
 
-           <div class="input">
-            <input type="email" id="email" name="email">
-            <input class="check-btn" type="submit" value="Contact Us">
-           </div>
+        <form id="form">
+         <div class="form-section">
+            <div class="form-input">
+                <input type="email" id="email" name="email" placeholder="Enter your email address">
+                <input class="check-btn" type="submit" value="Contact Us" onclick="validation()">
+            </div>
+            <span id="text"></span>
+
+         </div>
     </div>
+
+    <script src="./index.js"></script>
 </body>
 
 </html>
