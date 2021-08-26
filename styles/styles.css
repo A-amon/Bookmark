@@ -91,6 +91,7 @@ input, button {
   background: none;
   font-size: 1rem;
   border-top: 1px solid #e9ecf1;
+  cursor: pointer;
 }
 
 .features__tab:last-child {
@@ -150,9 +151,35 @@ input, button {
 
 .features-button {
   margin-top: 2rem;
+  background-color: #5368df;
+  border: none;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  font-weight: 500;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.features-button:hover {
+  border-color: #5368df;
+  background-color: white;
+  color: #5368df;
+  -webkit-box-shadow: 0 5px 10px rgba(83, 104, 223, 0.3);
+          box-shadow: 0 5px 10px rgba(83, 104, 223, 0.3);
 }
 
 @media screen and (min-width: 768px) {
+  .features .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .features-title, .features__tabpanel-title {
+    font-size: 2rem;
+  }
+  .features-desc, .features__tabpanel-desc {
+    font-size: 1rem;
+  }
   .features-title {
     font-size: 2rem;
   }
@@ -190,6 +217,24 @@ input, button {
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
+  }
+  .features__col:nth-child(2) {
+    padding: 0 2rem;
+  }
+}
+
+@media screen and (min-width: 1020px) {
+  .features__tabpanel {
+    position: relative;
+  }
+  .features__tabpanel::before {
+    height: 325px;
+    border-radius: 0 200px 200px 0;
+  }
+  .features__image-img {
+    height: auto;
+    max-width: 600px;
+    margin-left: -100px;
   }
 }
 /*# sourceMappingURL=styles.css.map */
