@@ -1,50 +1,51 @@
-
 var currentWidth
 var staggerAnim
 
+gsap.registerPlugin(ScrollTrigger)
+
 /**
  * Setting up stagger animation for download item
- * @param {boolean} play
  */
-const setStaggerAnimation = (play = false) => {
-    staggerAnim = TweenMax.staggerFromTo('.download__item',
-        1,
-        { opacity: 0, y: -50 },
-        {
-            opacity: 1, y: (index) => {
-                if (currentWidth >= 1020)
-                    return index * 50
-                return 0
-            }
+const setStaggerAnimation = () => {
+    ScrollTrigger.refresh()
+
+    //  start animation values
+    const fromValues = {
+        opacity: 0,
+        y: -50
+    }
+
+    //  end animation values
+    const toValues = {
+        opacity: 1,
+        y: (index) => {
+            if (currentWidth >= 1020)
+                return index * 50
+            return 0
         },
-        0.2)
+        stagger: {
+            each: 0.2,
+            amount: 1
+        }
+    }
 
-    if (!play)
-        staggerAnim.pause()
-    else
-        staggerAnim.play()
-}
+    gsap.set('.download__item', fromValues)
 
-const downloadSection = document.querySelector('.download')
-
-/**
- * Setting up intersection observer for .download section
- */
-const setIntersectionObserver = () => {
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            //  Play stagger animation when reaches .download
-            if (entry.intersectionRatio > 0) {
-                staggerAnim.play()
-            }
-            //  Reset stagger animation when not .downlaod
-            else {
-                staggerAnim.reverse()
-            }
-        })
+    ScrollTrigger.batch('.download__item', {
+        trigger: '.download',
+        onEnter: (elements) => {
+            gsap.to(elements, toValues)
+        },
+        onEnterBack: (elements) => {
+            gsap.to('.download__item', toValues)
+        },
+        onLeave: (elements) => {
+            gsap.set(elements, fromValues)
+        },
+        onLeaveBack: (elements) => {
+            gsap.set(elements, fromValues)
+        }
     })
-
-    observer.observe(downloadSection)
 }
 
 var resizeTimeout = null
@@ -66,7 +67,7 @@ const setResizeListener = () => {
          */
         resizeTimeout = setTimeout(() => {
             clearResizeTimeout()
-            setStaggerAnimation(true)
+            setStaggerAnimation()
         }, 2000)
     })
 }
@@ -81,5 +82,4 @@ const clearResizeTimeout = () => {
 }
 
 setStaggerAnimation()
-setIntersectionObserver()
 setResizeListener()
