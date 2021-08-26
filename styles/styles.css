@@ -37,9 +37,12 @@ details>div
   color: hsl(229, 8%, 60%);
 }
 
+details{
+  max-width:600px;
+  margin:auto;
+}
 
   summary{
-    padding-left: 30%;
     position:relative
   }
   summary:hover{
@@ -52,7 +55,7 @@ details>div
     padding-top: 1rem;
     padding-bottom: 1rem;
     font-size: 1.25rem;
-    cursor: pointer
+    cursor: pointer;
     list-style: none;
   }
   details > summary::after{
@@ -61,12 +64,11 @@ details>div
     height: 1.5rem;
     display:inline-flex;
     transition: transform 0.3s ease;
-    padding-right: 42%;
-
+    position:absolute;
+    right:0;
   }
   details[open]>summary::after{
     transform:rotate(180deg);
-    position:absolute; right:0; 
   }
 
 p{
