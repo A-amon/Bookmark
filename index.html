@@ -67,15 +67,15 @@
         <p class="contact-p">35,000+ ALREADY JOINED</p>
         <p class="contact-header">Stay up-to-date with what <br>we're doing</p>
 
-        <form id="form">
-         <div class="form-section">
+        <form id="form" novalidate onsubmit="validation(event)">
+        
             <div class="form-input">
                 <input type="email" id="email" name="email" placeholder="Enter your email address">
-                <input class="check-btn" type="submit" value="Contact Us" onclick="validation()">
-            </div>
             <span id="text"></span>
 
-         </div>
+            </div>
+            <input class="check-btn" type="submit" value="Contact Us" >
+        </form>
     </div>
 
     <script src="./index.js"></script>
