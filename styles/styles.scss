@@ -89,6 +89,20 @@
             width: 100%;
             text-transform: capitalize;
             font-weight: 500;
+            background-color: $c-softblue;
+            border:none;
+            color:$c-white;
+            padding:1rem 2rem;
+            border-radius: 5px;
+            font-weight: 500;
+            border:2px solid transparent;
+            cursor: pointer;
+            &:hover{
+                border-color:$c-softblue;
+                background-color: $c-white;
+                color:$c-softblue;
+                box-shadow:0 5px 10px rgba($c-softblue,0.3);
+            }
         }
     }
 
