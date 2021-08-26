@@ -23,6 +23,11 @@ hr{
 }
 .faq-header{
   text-align: center;
+  margin-top: 3rem;
+}
+body>p{
+  margin-bottom: 4rem;
+  margin-top: 1.5rem;
 }
 body>p,
 details>div
@@ -35,6 +40,7 @@ details>div
 
   summary{
     padding-left: 30%;
+    position:relative
   }
   summary:hover{
     color:hsl(0, 94%, 66%);
@@ -43,10 +49,10 @@ details>div
   details > summary{
     display:flex;
     justify-content:space-between;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     font-size: 1.25rem;
-    cursor: pointer;
+    cursor: pointer
     list-style: none;
   }
   details > summary::after{
@@ -60,7 +66,7 @@ details>div
   }
   details[open]>summary::after{
     transform:rotate(180deg);
-  position: fixed;
+    position:absolute; right:0; 
   }
 
 p{
@@ -69,6 +75,8 @@ p{
 .wrapper{
   display: flex;
   justify-content: center;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 .faq-btn{ 
 color: white;
@@ -91,21 +99,28 @@ border-radius: 6px;
   color:white;
   font-size: 2rem;
   font-size: bold;
+  margin-bottom: 3rem;
 }
 .contact-p{
   letter-spacing: 6px;
   color: white;
+  margin-bottom: 4rem;
 }
 .check-btn{
   color: white;
 background-color:hsl(0, 94%, 66%);
 padding: 14px;
 border-radius: 6px;
+margin-left: 1.5rem;
 }
 .check-btn:hover{
   color:hsl(0, 94%, 66%);
   background-color:white;
   border:1px solid hsl(0, 94%, 66%);
+}
+.input{
+  margin: auto;  display: flex;
+  justify-content: center;
 }
 #email{
   padding: 14px;
@@ -113,5 +128,8 @@ border-radius: 6px;
 }
 #email:focus{
   border:5px solid hsl(0, 94%, 66%);
+border-radius: 6px;
+transition: 0.2s;
+outline: none;
 }
 /*# sourceMappingURL=styles.css.map */
