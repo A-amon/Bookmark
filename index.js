@@ -4,6 +4,7 @@ const dropDown = document.querySelector(".sb1")
 const close = document.querySelector(".close")
 const color = document.querySelector(".color-change")
 const navbar = document.querySelector(".navbar")
+const logo = document.querySelector(".logo")
 
 /*
 * Show/ hide nav dropdown
@@ -30,10 +31,12 @@ close.addEventListener("click", function () {
 })
 
 bars.addEventListener("click", function () {
-
+    logo.classList.add("logo-change")
     navbar.classList.add("color-change")
 })
 
 close.addEventListener("click", function () {
+    logo.classList.remove("logo-change")
+
     navbar.classList.remove("color-change")
 })

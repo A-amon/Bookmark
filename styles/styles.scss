@@ -27,7 +27,9 @@
 }
 
 
-.logo{
+.logo-change{
+  filter: invert(80%) sepia(50%) saturate(2%) hue-rotate(18deg)
+  brightness(228%) contrast(59%);
  
 }
 .navbar {
