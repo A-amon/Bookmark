@@ -42,10 +42,11 @@
   @include laptop {
     align-content: center;
     background-color: $c-white;
+    margin-left: 2.5rem;
  
   &-toggle {
-    background-color: transparent;
-    border: none;
+    background-color: none;
+    border-color: $c-white;
   }
     &-btn {
       display: inline-block;
@@ -84,9 +85,7 @@
     width: 500px;
     display: block;
     margin: 0;
-    // border: none;
-    // box-shadow: none;
-    // position: relative;
+
     height: fit-content;
     background-color: $c-white;
   }
@@ -114,15 +113,7 @@
   }
   @include laptop {
     display: none;
-    // width: 120px;
-    // position: relative;
-    // top: -50px;
-    // // position: absolute;
-    // // top: 10%;
-    // // left: 0;
-    // // right: 0;
-    // // margin: auto;
-    // // z-index: 1;
+   
   }
 }
 
@@ -168,10 +159,7 @@ width: 100%;
   border-bottom: .00005px solid rgba(243, 241, 241, 0.2); 
   text-transform: uppercase;
 @include laptop{
-//   display: inline;
-//   border-bottom: none;
-// padding-right: 2rem;
-//   margin: 0;
+
 }
 &.dropdown-list__item--top{
   border-top: .00005px solid rgba(243, 241, 241, 0.2); 
@@ -226,6 +214,7 @@ width: 100%;
 
 }
 .bars {
+
   @include tablet {
     display: none;
   }
@@ -240,43 +229,53 @@ width: 100%;
     display: flex;
     flex-direction: row-reverse;
     padding-bottom: 0;
-    margin: 1rem;
   }
 }
 .image-container{
   position: relative;
   display: flex;
-  width: 100%;
+  width: 85%;
   height: 200px;
   align-items: center;
   background-color: $c-softblue;
-  border-bottom-left-radius: 48%;
-@include laptop{
-  border-bottom-left-radius: 48%;
-  width: 90%;
-  margin-left: 8rem;
-  height: 300px;
-  
-  
+  border-radius:100px 0 0 100px;
+  margin-left: 3.5rem;
+  @include tablet{
+  height: 400;
+  margin-left: 14.25rem;
+  width: 70%;
+  }
+  @include laptop{
+  border-radius:100px 0 0 100px;  width: 90%;
+  margin-left: 12.8rem;
+  margin-top: 4.8rem;
+  height: 200px;
+  width: 30%;
 }
-
   &::before {
     content: "";
     position: absolute;
-    top: -40%;
+    top: -35%;
     right: 0;
-    left: -6.2%;
+    left: -16.9%;
     bottom: 0;
     background-image: $background-image;
-    width: 393px;
+    width: 370px;
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: top center;
-    @include laptop{
-      width: 400px;
-      top: -30%;
+    @include tablet{
+      width: 430px;
+      top: -60%;
       right: 0;
-      left: -6.2%;
+      left: -20.4%;
+      bottom: 0;
+    }
+    @include laptop{
+      width: 430px;
+      top: -55%;
+      right: 0;
+      left: -50.2%;
       bottom: 0;
       
     }
@@ -288,8 +287,8 @@ width: 100%;
   font-size: 32px;
   text-align: center;
   font-weight: 500;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin:2rem auto;
+  
   @include tablet{
     width: 500px;
     display: block;
@@ -304,6 +303,7 @@ width: 100%;
     margin: 0;
     width: 300px;
     text-align: justify;
+     margin-left: 1rem;
 
   }
 
@@ -322,6 +322,7 @@ width: 100%;
   @include laptop{
     width: 432px ;
     text-align:start;
+    margin: 1rem;
   }
 }
 
@@ -340,6 +341,7 @@ width: 100%;
   padding-top: 0;
   margin-top: 0;
   display: block;
+  margin: 1rem;
 }
   
 }
