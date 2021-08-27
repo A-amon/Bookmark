@@ -29,7 +29,7 @@
 
 .logo-change{
   filter: invert(80%) sepia(50%) saturate(2%) hue-rotate(18deg)
-  brightness(228%) contrast(59%);
+  brightness(228%) contrast(100%);
  
 }
 .navbar {
@@ -49,10 +49,14 @@
   &-toggle {
     background-color: none;
     border-color: $c-white;
+    @include laptop{
+      display: none;
+    }
   }
     &-btn {
       display: inline-block;
       margin: 0 auto;
+      background-color: $c-white;
     }
   }
 }
@@ -90,7 +94,6 @@
     width: 500px;
     display: block;
     margin: 0;
-
     height: fit-content;
     background-color: $c-white;
   }
@@ -112,7 +115,6 @@
   right: 0;
   margin: auto;
   z-index: 1;
-
   @include tablet{
     width: 100%;
   }
@@ -121,14 +123,14 @@
    
   }
 }
-
 .dropdown-list {
   width: 80%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   list-style: none;
+
   padding: 0;
   @include laptop{
     flex-direction:row;

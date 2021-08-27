@@ -52,8 +52,8 @@ input, button {
 }
 
 .logo-change {
-  -webkit-filter: invert(80%) sepia(50%) saturate(2%) hue-rotate(18deg) brightness(228%) contrast(59%);
-          filter: invert(80%) sepia(50%) saturate(2%) hue-rotate(18deg) brightness(228%) contrast(59%);
+  -webkit-filter: invert(80%) sepia(50%) saturate(2%) hue-rotate(18deg) brightness(228%) contrast(100%);
+          filter: invert(80%) sepia(50%) saturate(2%) hue-rotate(18deg) brightness(228%) contrast(100%);
 }
 
 .navbar {
@@ -84,9 +84,19 @@ input, button {
     background-color: none;
     border-color: white;
   }
+}
+
+@media screen and (min-width: 1020px) and (min-width: 1020px) {
+  .navbar-toggle {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1020px) {
   .navbar-btn {
     display: inline-block;
     margin: 0 auto;
+    background-color: white;
   }
 }
 
@@ -186,9 +196,9 @@ input, button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
