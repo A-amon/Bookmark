@@ -2,8 +2,7 @@
 * {
   margin: 0;
   padding: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -37,13 +36,11 @@ input, button {
   padding: 2rem 1rem;
   margin: auto;
 }
-
 @media screen and (min-width: 768px) {
   .container {
     max-width: 768px;
   }
 }
-
 @media screen and (min-width: 1020px) {
   .container {
     max-width: 1020px;
@@ -85,12 +82,8 @@ summary:hover {
 }
 
 details > summary {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   padding-top: 1rem;
   padding-bottom: 1rem;
   font-size: 1.25rem;
@@ -102,21 +95,15 @@ details > summary::after {
   content: url(/assets/icons/icon-arrow.svg);
   width: 1.5rem;
   height: 1.5rem;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-transition: -webkit-transform 0.3s ease;
-  transition: -webkit-transform 0.3s ease;
   transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
   position: absolute;
   right: 0;
 }
 
 details[open] > summary::after {
   content: url(/assets/icons/icon-arrow-red.svg);
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 svg:hover {
@@ -128,12 +115,8 @@ details > div > p {
 }
 
 .wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   margin-top: 4rem;
   margin-bottom: 4rem;
 }
@@ -188,12 +171,8 @@ details > div > p {
 }
 
 .form-input {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   position: relative;
   width: 500px;
 }
@@ -209,7 +188,6 @@ details > div > p {
 #email:focus {
   border: 5px solid #fa5757;
   border-radius: 6px;
-  -webkit-transition: 0.2s;
   transition: 0.2s;
   outline: none;
 }
@@ -227,21 +205,15 @@ details > div > p {
 }
 
 #form {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   margin: auto;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 
 .error::after {
   background-image: url(/assets/icons/icon-error.svg);
-  content: '';
+  content: "";
   height: 20px;
   width: 20px;
   display: block;
@@ -254,5 +226,4 @@ details > div > p {
 
 .error #text {
   display: block;
-}
-/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=styles.css.map */
