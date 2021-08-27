@@ -215,7 +215,6 @@ input, button {
 
 @media screen and (min-width: 1020px) {
   .dropdown-link:hover {
-    padding-bottom: 1rem;
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
@@ -270,8 +269,8 @@ input, button {
 }
 
 .login-btn:hover {
-  background-color: #fa5757;
-  color: white;
+  background-color: white;
+  color: #fa5757;
   border: 2px solid #fa5757;
 }
 
@@ -523,5 +522,17 @@ input, button {
     padding: 0.9rem;
     border-radius: .25rem;
   }
+}
+
+.hero__btn:hover {
+  border: 1px solid #5368df;
+  background-color: white;
+  color: #5368df;
+}
+
+.hero__btn--white:hover {
+  border: 1px solid #252b46;
+  background-color: white;
+  color: #252b46;
 }
 /*# sourceMappingURL=styles.css.map */
