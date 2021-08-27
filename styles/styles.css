@@ -81,8 +81,8 @@ input, button {
     margin-left: 2.5rem;
   }
   .navbar-toggle {
-    background-color: none;
-    border-color: white;
+    background-color: transparent;
+    border: none;
   }
 }
 
@@ -96,7 +96,7 @@ input, button {
   .navbar-btn {
     display: inline-block;
     margin: 0 auto;
-    background-color: white;
+    border: none;
   }
 }
 
@@ -130,6 +130,26 @@ input, button {
 
 @media screen and (min-width: 1020px) {
   .img {
+    display: none;
+  }
+}
+
+.close {
+  background-color: #252b46;
+}
+
+.bars {
+  background-color: white;
+}
+
+@media screen and (min-width: 768px) {
+  .bars {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1020px) {
+  .bars {
     display: none;
   }
 }
@@ -308,18 +328,6 @@ input, button {
 
 @media screen and (min-width: 1020px) {
   .icons {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .bars {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 1020px) {
-  .bars {
     display: none;
   }
 }

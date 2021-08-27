@@ -47,16 +47,18 @@
     margin-left: 2.5rem;
  
   &-toggle {
-    background-color: none;
-    border-color: $c-white;
+    background-color: transparent;
+    border: none;
     @include laptop{
       display: none;
+   
     }
   }
     &-btn {
       display: inline-block;
       margin: 0 auto;
-      background-color: $c-white;
+      // background-color: $c-white;
+      border: none;
     }
   }
 }
@@ -84,7 +86,20 @@
     display: none;
   }
 }
+.close{
+  background-color: $c-verydarkblue;
 
+}
+.bars {
+background-color: $c-white;
+
+  @include tablet {
+    display: none;
+  }
+  @include laptop{
+    display: none;
+  }
+}
 .dropdown {
   height: 740px;
   display: none;
@@ -220,15 +235,7 @@ width: 100%;
 }
 
 }
-.bars {
 
-  @include tablet {
-    display: none;
-  }
-  @include laptop{
-    display: none;
-  }
-}
 
 .hero{
   padding-top: 8.9rem;
