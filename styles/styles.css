@@ -373,16 +373,16 @@ footer a {
   text-decoration: none;
 }
 
-footer__item {
+footer .footer__item {
   margin-top: 2rem;
   font-size: 0.9rem;
 }
 
-footer__item:hover {
+footer .footer__item:hover {
   color: #9194a1;
 }
 
-footer__socials {
+footer .footer__socials {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -395,16 +395,16 @@ footer__socials {
   margin-top: 3rem;
 }
 
-footer__social {
+footer .footer__social {
   margin: 0 1rem;
 }
 
-footer__social:hover path {
+footer .footer__social:hover path {
   fill: #fa5757;
 }
 
 @media screen and (min-width: 768px) {
-  footer .container, footer__items {
+  footer .container, footer .footer__items {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -412,10 +412,10 @@ footer__social:hover path {
         -ms-flex-align: center;
             align-items: center;
   }
-  footer__item {
+  footer .footer__item {
     margin: 0 0 0 2rem;
   }
-  footer__socials {
+  footer .footer__socials {
     margin: 0 0 0 auto;
   }
 }
