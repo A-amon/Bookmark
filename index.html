@@ -13,7 +13,62 @@
 </head>
 
 <body>
+    <header class="header">
+        <!--navbar-->
+        <nav class="navbar ">
 
+            <img class="logo" src="./assets/images/logo-bookmark.svg" alt="logo">
+
+            <button class="navbar-toggle">
+                <img class="close img" src="./assets/icons/icon-close.svg" alt="close-icon">
+                <img class="bars show img" src="./assets/icons/icon-hamburger.svg" alt="hamburger-icon">
+            </button>
+            <div class="dropdown  sb1">
+                <ul class="dropdown-list">
+                    <li class="dropdown-list__item  dropdown-list__item--top ">
+                        <a class="dropdown-link" href="#"> Features</a>
+                    </li>
+                    <li class="dropdown-list__item  ">
+                        <a class="dropdown-link" href="#"> Pricing</a>
+                    </li>
+                    <li class="dropdown-list__item dropdown-list__item--bottom ">
+                        <a class="dropdown-link" href="#"> Contact</a>
+                    </li>
+                    <div class="btn-container">
+                        <button class="btn login-btn"> login</button>
+                    </div>
+                    <div class="icons">
+                        <img src="./assets/icons/icon-facebook.svg" alt="">
+                        <img src="./assets/icons/icon-twitter.svg" alt="">
+                    </div>
+            </div>
+            </ul>
+            </div>
+
+
+        </nav>
+
+    </header>
+    <!--hero-section-->
+    <section class="hero">
+
+        <div class="image-container">
+        </div>
+        <div>
+            <h2 class="hero-tittle"> A Simple Bookmark Manager</h2>
+            <p class="hero-text">
+                A clean and simple interface to organize your favourite websites.
+                Open a new browser tab and see your sites load instantly.
+                Try it for free.</p>
+
+
+
+            <div class="btn-container">
+                <button class="hero__btn">Get it on Chrome</button>
+                <button class="hero__btn hero__btn--white"> Get it on Firefox</button>
+            </div>
+        </div>
+    </section>
     <!-- faq section -->
     <h2 class="faq-header">Frequently Asked Questions</h2>
     <p>Here are some of our FAQs. If you have any other questions you'd like answered please feel free to email us.</p>
@@ -68,13 +123,13 @@
         <p class="contact-header">Stay up-to-date with what <br>we're doing</p>
 
         <form id="form" novalidate onsubmit="validation(event)">
-        
+
             <div class="form-input">
                 <input type="email" id="email" name="email" placeholder="Enter your email address">
-            <span id="text"></span>
+                <span id="text"></span>
 
             </div>
-            <input class="check-btn" type="submit" value="Contact Us" >
+            <input class="check-btn" type="submit" value="Contact Us">
         </form>
     </div>
 
