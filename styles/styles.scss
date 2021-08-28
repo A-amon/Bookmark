@@ -102,10 +102,13 @@ background-color: $c-white;
   }
 }
 .dropdown {
-  height: 740px;
+  height: 729px;
   display: none;
   opacity: .977;
   background-color: $c-verydarkblue;
+  @include tablet{
+    height: 690;
+  }
   @include laptop {
     width: 500px;
     display: block;
