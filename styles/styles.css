@@ -529,10 +529,16 @@ footer__social:hover path {
 }
 
 .dropdown {
-  height: 740px;
+  height: 729px;
   display: none;
   opacity: .977;
   background-color: #252b46;
+}
+
+@media screen and (min-width: 768px) {
+  .dropdown {
+    height: 690;
+  }
 }
 
 @media screen and (min-width: 1020px) {
