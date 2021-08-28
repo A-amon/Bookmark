@@ -559,4 +559,209 @@ input, button {
   background-color: white;
   color: #252b46;
 }
+
+/* FAQs section */
+.faq-header {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+body > p {
+  margin-bottom: 4rem;
+  margin-top: 1.5rem;
+  padding-left: 30%;
+  padding-right: 30%;
+  color: #9194a1;
+}
+
+details {
+  max-width: 600px;
+  margin: auto;
+}
+
+.summary {
+  border-top: 1px solid rgba(0, 0, 0, 0.5);
+  width: 45%;
+  margin: auto;
+}
+
+summary {
+  position: relative;
+}
+
+summary:hover {
+  color: #fa5757;
+}
+
+details > summary {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+details > summary::after {
+  content: url(/assets/icons/icon-arrow.svg);
+  width: 1.5rem;
+  height: 1.5rem;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  position: absolute;
+  right: 0;
+}
+
+details[open] > summary::after {
+  content: url(/assets/icons/icon-arrow-red.svg);
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+svg:hover {
+  fill: red;
+}
+
+details > div > p {
+  color: #9194a1;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.faq-btn {
+  color: white;
+  background-color: #5368df;
+  padding: 14px;
+  border-radius: 6px;
+}
+
+.faq-btn:hover {
+  color: #5368df;
+  background-color: white;
+  border: 1px solid #5368df;
+}
+
+.contact {
+  background-color: #5368df;
+  padding: 4rem;
+}
+
+.contact-header {
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+  font-size: bold;
+  margin-bottom: 3rem;
+  padding-left: 30%;
+  padding-right: 30%;
+}
+
+.contact-p {
+  text-align: center;
+  letter-spacing: 6px;
+  color: white;
+  margin-bottom: 4rem;
+}
+
+.check-btn {
+  color: white;
+  background-color: #fa5757;
+  padding: 14px;
+  border-radius: 6px;
+  margin-left: 1.5rem;
+}
+
+.check-btn:hover {
+  color: #fa5757;
+  background-color: white;
+  border: 1px solid #fa5757;
+}
+
+.form-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  width: 500px;
+}
+
+#email {
+  border-radius: 6px;
+  padding: 16px 20px;
+  line-height: 1;
+  position: relative;
+  width: 100%;
+}
+
+#email:focus {
+  border: 5px solid #fa5757;
+  border-radius: 6px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  outline: none;
+}
+
+#text {
+  padding: 8px;
+  color: white;
+  display: none;
+  border-radius: 0 0 6px 6px;
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fa5757;
+}
+
+#form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.error::after {
+  background-image: url(/assets/icons/icon-error.svg);
+  content: '';
+  height: 20px;
+  width: 20px;
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 10px;
+  margin: auto;
+}
+
+.error #text {
+  display: block;
+}
 /*# sourceMappingURL=styles.css.map */
