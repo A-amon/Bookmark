@@ -937,11 +937,12 @@ footer .footer__social:hover path {
 
 /* FAQs section */
 .faq-header {
+  font-size: 1.5rem;
   text-align: center;
   margin-top: 100px;
 }
 
-.faq-header-p {
+.faq-p{
   margin-bottom: 4rem;
   margin-top: 1.5rem;
   padding-left: 30%;
@@ -1045,7 +1046,7 @@ details > div > p {
   color: white;
   font-size: 2rem;
   font-size: bold;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   padding-left: 30%;
   padding-right: 30%;
 }
