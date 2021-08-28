@@ -41,11 +41,6 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  @include laptop {
-    align-content: center;
-    background-color: $c-white;
-    margin-left: 2.5rem;
- 
   &-toggle {
     background-color: transparent;
     border: none;
@@ -54,6 +49,12 @@
    
     }
   }
+  @include laptop {
+    align-content: center;
+    background-color: $c-white;
+    margin-left: 2.5rem;
+ 
+
     &-btn {
       display: inline-block;
       margin: 0 auto;

@@ -73,6 +73,17 @@ input, button {
   padding: 1rem;
 }
 
+.navbar-toggle {
+  background-color: transparent;
+  border: none;
+}
+
+@media screen and (min-width: 1020px) {
+  .navbar-toggle {
+    display: none;
+  }
+}
+
 @media screen and (min-width: 1020px) {
   .navbar {
     -ms-flex-line-pack: center;
@@ -80,19 +91,6 @@ input, button {
     background-color: white;
     margin-left: 2.5rem;
   }
-  .navbar-toggle {
-    background-color: transparent;
-    border: none;
-  }
-}
-
-@media screen and (min-width: 1020px) and (min-width: 1020px) {
-  .navbar-toggle {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 1020px) {
   .navbar-btn {
     display: inline-block;
     margin: 0 auto;
