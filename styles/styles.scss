@@ -25,6 +25,118 @@
     }
 }
 
+.download{
+    text-align: center;
+    $item-width:325px;
+
+    &-title, &__item-title{
+        color:$c-verydarkblue;
+        font-weight: 500;
+    }
+
+    &-title{
+        font-size: 1.5rem;
+    }
+
+    &-desc, &__item-desc{
+        font-size: 0.9rem;
+        color:$c-grayishblue;
+    }
+
+    &-desc{
+        max-width: 500px;
+        margin: auto;
+    }
+
+    &__items{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: stretch;
+        margin-top:2rem;
+    }
+
+    &__item{
+        margin-bottom: 1.5rem;
+        padding:2rem 1rem;
+        border-radius: 10px;
+        background-color: $c-white;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        width: 100%;
+        max-width: $item-width;
+
+        &-img, &-desc{
+            margin-bottom: 2rem;
+        }
+
+        &-img{
+            width: 100px;
+        }
+
+        &-title{
+            font-size: 1rem;
+        }
+
+        .footer{
+            padding-top:1.5rem;
+            background-image: url('../assets/icons/bg-dots.svg');
+            background-repeat: no-repeat;
+            background-position: top;
+            background-size: contain;
+        }
+
+        &-button{
+            width: 100%;
+            text-transform: capitalize;
+            font-weight: 500;
+            background-color: $c-softblue;
+            border:none;
+            color:$c-white;
+            padding:1rem 2rem;
+            border-radius: 5px;
+            font-weight: 500;
+            border:2px solid transparent;
+            cursor: pointer;
+            &:hover{
+                border-color:$c-softblue;
+                background-color: $c-white;
+                color:$c-softblue;
+                box-shadow:0 5px 10px rgba($c-softblue,0.3);
+            }
+        }
+    }
+
+    @include tablet{
+        &__item{
+            margin-right: 1.5rem;
+        }
+    }
+
+    @include laptop{
+      
+      &-title{
+        font-size: 2rem;
+      }
+      &-desc, &__item-desc{
+        font-size: 1rem;
+      }
+
+      &__item{
+          flex:1;
+          &:nth-child(2){
+              transform:translateY(50px);
+          }
+
+          &:nth-child(3){
+              transform:translateY(100px);
+          }
+
+          &-title{
+              font-size: 1.3rem;
+          }
+      }
+    }
+}
 /*
 * FEATURES
 */
@@ -145,10 +257,6 @@
     
         &-desc, &__tabpanel-desc{
             font-size: 1rem;
-        }
-
-        &-title{
-            font-size: 2rem;
         }
 
         &__tabs{
