@@ -938,10 +938,10 @@ footer .footer__social:hover path {
 /* FAQs section */
 .faq-header {
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 100px;
 }
 
-body > p {
+.faq-header-p {
   margin-bottom: 4rem;
   margin-top: 1.5rem;
   padding-left: 30%;
@@ -1054,7 +1054,7 @@ details > div > p {
   text-align: center;
   letter-spacing: 6px;
   color: white;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .check-btn {
