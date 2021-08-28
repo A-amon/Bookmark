@@ -30,7 +30,9 @@
 .logo-change{
   filter: invert(80%) sepia(50%) saturate(2%) hue-rotate(18deg)
   brightness(228%) contrast(100%);
- 
+ @include laptop{
+  filter: none;
+ }
 }
 .navbar {
   position: relative;
@@ -65,7 +67,7 @@
 .color-change{
   background-color: $c-verydarkblue;
   @include laptop{
-    display: none;
+    background-color: $c-white;
   }
 }
 .img {
@@ -134,7 +136,11 @@ background-color: $c-white;
     width: 100%;
   }
   @include laptop {
-    display: none;
+position: relative;
+top: 0;
+width: fit-content;
+margin: 0 0 0 auto;
+
    
   }
 }
@@ -237,7 +243,6 @@ width: 100%;
   @include laptop{
     display: flex;
     flex-direction: row-reverse;
-    padding-bottom: 0;
   }
 }
 .image-container{
@@ -315,8 +320,8 @@ width: 100%;
      margin-left: 1rem;
 
   }
-
 }
+
 .hero-text {
    width: 332px;
    display: block;
@@ -329,7 +334,7 @@ width: 100%;
 
   }
   @include laptop{
-    width: 432px ;
+    // width: 432px ;
     text-align:start;
     margin: 1rem;
   }
@@ -366,36 +371,23 @@ width: 100%;
   
   @include laptop{
     font-size: 12px;
-    width: 30%;
+    width: 9rem;
     color: $c-white;
     border: 1px solid $c-softblue;
     background-color: $c-softblue;
     padding: .9rem;
     border-radius: .25rem;
-    
-
   }
-  
 }
 .hero__btn--white {
-  font-size: 14px;
-  width: 50%;
-  margin-left:.25rem;
   background-color: $c-off-white;
   color: $c-verydarkblue;
-  padding: 0.8rem;
-  border-radius: 0.5rem;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
   border: 1px solid $c-off-white;
-  font-weight: 400;
+  
   @include laptop{
-    font-size: 12px;
-    width: 30%;
     border: 1px solid $c-off-white;
     background-color: $c-off-white;
     color: $c-verydarkblue;
-    padding: 0.9rem;
-    border-radius: .25rem;
   }
 }
 .hero__btn:hover{

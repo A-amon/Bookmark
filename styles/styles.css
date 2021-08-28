@@ -56,6 +56,13 @@ input, button {
           filter: invert(80%) sepia(50%) saturate(2%) hue-rotate(18deg) brightness(228%) contrast(100%);
 }
 
+@media screen and (min-width: 1020px) {
+  .logo-change {
+    -webkit-filter: none;
+            filter: none;
+  }
+}
+
 .navbar {
   position: relative;
   -webkit-box-align: center;
@@ -104,7 +111,7 @@ input, button {
 
 @media screen and (min-width: 1020px) {
   .color-change {
-    display: none;
+    background-color: white;
   }
 }
 
@@ -201,7 +208,12 @@ input, button {
 
 @media screen and (min-width: 1020px) {
   .change {
-    display: none;
+    position: relative;
+    top: 0;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 0 0 auto;
   }
 }
 
@@ -343,7 +355,6 @@ input, button {
     -webkit-box-direction: reverse;
         -ms-flex-direction: row-reverse;
             flex-direction: row-reverse;
-    padding-bottom: 0;
   }
 }
 
@@ -462,7 +473,6 @@ input, button {
 
 @media screen and (min-width: 1020px) {
   .hero-text {
-    width: 432px;
     text-align: start;
     margin: 1rem;
   }
@@ -515,7 +525,7 @@ input, button {
 @media screen and (min-width: 1020px) {
   .hero__btn {
     font-size: 12px;
-    width: 30%;
+    width: 9rem;
     color: white;
     border: 1px solid #5368df;
     background-color: #5368df;
@@ -525,28 +535,16 @@ input, button {
 }
 
 .hero__btn--white {
-  font-size: 14px;
-  width: 50%;
-  margin-left: .25rem;
   background-color: #fefbfb;
   color: #252b46;
-  padding: 0.8rem;
-  border-radius: 0.5rem;
-  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
   border: 1px solid #fefbfb;
-  font-weight: 400;
 }
 
 @media screen and (min-width: 1020px) {
   .hero__btn--white {
-    font-size: 12px;
-    width: 30%;
     border: 1px solid #fefbfb;
     background-color: #fefbfb;
     color: #252b46;
-    padding: 0.9rem;
-    border-radius: .25rem;
   }
 }
 
