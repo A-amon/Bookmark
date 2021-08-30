@@ -14,57 +14,56 @@
 
 <body>
     <header class="header">
+        <a href="#"><img class="header__logo " src="./assets/images/logo-bookmark.svg" alt="bookmark">
+        </a>
         <!--navbar-->
         <nav class="navbar ">
-
-            <img class="logo" src="./assets/images/logo-bookmark.svg" alt="logo">
-
-            <button class="navbar-toggle">
-                <img class="close img" src="./assets/icons/icon-close.svg" alt="close-icon">
-                <img class="bars show img" src="./assets/icons/icon-hamburger.svg" alt="hamburger-icon">
+            <button class="navbar__toggle " aria-label="open navbar">
+                <img class="navbar__cross navbar__img" src="./assets/icons/icon-close.svg" alt="">
+                <img class="navbar__bars navbar__show  navbar__img" src="./assets/icons/icon-hamburger.svg" alt="">
             </button>
-            <div class="dropdown  sb1">
-                <ul class="dropdown-list">
-                    <li class="dropdown-list__item  dropdown-list__item--top ">
-                        <a class="dropdown-link" href="#"> Features</a>
+            <div class="dropdown">
+                <ul class="dropdown__list">
+                    <li class="dropdown__list-item  dropdown__list-item--top ">
+                        <a class="dropdown__list-link" href="#"> Features</a>
                     </li>
-                    <li class="dropdown-list__item  ">
-                        <a class="dropdown-link" href="#"> Pricing</a>
+                    <li class="dropdown__list-item  ">
+                        <a class="dropdown__list-link" href="#"> Pricing</a>
                     </li>
-                    <li class="dropdown-list__item dropdown-list__item--bottom ">
-                        <a class="dropdown-link" href="#"> Contact</a>
+                    <li class="dropdown__list-item  ">
+                        <a class="dropdown__list-link" href="#"> Contact</a>
                     </li>
-                    <div class="btn-container">
-                        <button class="btn login-btn"> login</button>
-                    </div>
-                    <div class="icons">
-                        <img src="./assets/icons/icon-facebook.svg" alt="">
-                        <img src="./assets/icons/icon-twitter.svg" alt="">
-                    </div>
+                    <li class="dropdown__list-item dropdown__list-item--login">
+                        <a class="dropdown__list-item--link" href="">login</a>
+                    </li>
+                </ul>
+                <div class="icons">
+                    <img class="icons__img" src="./assets/icons/icon-facebook.svg" alt="">
+                    <img class="icons__img" src="./assets/icons/icon-twitter.svg" alt="">
+                </div>
             </div>
-            </ul>
-            </div>
-
-
         </nav>
 
+
     </header>
+
     <main>
         <!--hero-section-->
         <section class="hero">
 
-            <div class="image-container">
+            <div class="hero-main">
+                <img class="hero-main__img" src="./assets/images/illustration-hero.svg" alt="">
             </div>
-            <div>
-                <h2 class="hero-tittle"> A Simple Bookmark Manager</h2>
-                <p class="hero-text">
+            <div class="hero__body">
+                <h1 class="hero__tittle"> A Simple Bookmark Manager</h1>
+                <p class="hero__text">
                     A clean and simple interface to organize your favourite websites.
                     Open a new browser tab and see your sites load instantly.
                     Try it for free.</p>
 
 
 
-                <div class="btn-container">
+                <div class="hero__btn-container">
                     <button class="hero__btn">Get it on Chrome</button>
                     <button class="hero__btn hero__btn--white"> Get it on Firefox</button>
                 </div>
@@ -79,7 +78,7 @@
                     Our aim to make it quick and easy for you to access your favourite websites.
                     Your bookmarks sync between your devices so you can access them on the go.
                 </p>
-                <div class="features__tabs" role="tablist" aria-selected="true" aria-controls="bookmarking">
+                <div class="features__tabs" role="tablist">
                     <button class="features__tab" role="tab" aria-selected="true" aria-controls="bookmarking">
                         Simple Bookmarking
                     </button>
@@ -215,7 +214,8 @@
         </section>
         <!-- faq section -->
         <h2 class="faq-header">Frequently Asked Questions</h2>
-        <p class="faq-p">Here are some of our FAQs. If you have any other questions you'd like answered please feel free to email us.
+        <p class="faq-p">Here are some of our FAQs. If you have any other questions you'd like answered please feel free
+            to email us.
         </p>
 
         <div class="summary">
@@ -282,7 +282,7 @@
             </form>
         </div>
 
-      
+
     </main>
     <footer class="footer">
         <div class="container">
