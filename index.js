@@ -145,12 +145,15 @@ const selectTab = (tab) => {
 for (let tab of tabs) {
     tab.addEventListener('click', handleTabClick)
 }
-const bars = document.querySelector(".bars")
-const dropDown = document.querySelector(".sb1")
-const close = document.querySelector(".close")
+
+
+const bars = document.querySelector(".navbar__bars")
+const dropDown = document.querySelector(".dropdown")
+const cross = document.querySelector(".navbar__cross")
 const color = document.querySelector(".color-change")
 const navbar = document.querySelector(".navbar")
-const logo = document.querySelector(".logo")
+const logo = document.querySelector(".header__logo")
+const header = document.querySelector(".header")
 
 /*
 * Show/ hide nav dropdown
@@ -161,39 +164,36 @@ const logo = document.querySelector(".logo")
 */
 bars.addEventListener("click", function () {
     dropDown.classList.toggle("change")
-    bars.classList.remove("show")
-    close.classList.add("show")
+    bars.classList.remove("navbar__show")
+    cross.classList.add("navbar__show")
+    header.classList.add("color-change")
+    logo.classList.add("header__logo-change--color")
 
 })
 
 /*
 * Handle close button click event
 */
-close.addEventListener("click", function () {
+cross.addEventListener("click", function () {
     dropDown.classList.toggle("change")
-    close.classList.remove("show")
-    bars.classList.add("show")
+    cross.classList.remove("navbar__show")
+    bars.classList.add("navbar__show")
     bars.classList.remove("color-change")
+    header.classList.remove("color-change")
+    logo.classList.remove("header__logo-change--color")
+
+
 })
 
-bars.addEventListener("click", function () {
-    logo.classList.add("logo-change")
-    navbar.classList.add("color-change")
-})
 
-close.addEventListener("click", function () {
-    logo.classList.remove("logo-change")
-
-    navbar.classList.remove("color-change")
-})
-function validation (event) {
+function validation(event) {
     var form = document.getElementById("form");
     event.preventDefault();
     var email = document.getElementById("email").value;
     var text = document.getElementById("text");
     var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
     var form_input = document.querySelector('.form-input')
-    if (!email.match(pattern)) {
+    if (email.match(pattern)) {
         text.innerHTML = "Whoops, make sure it's an email";
         form_input.classList.add('error');
     }
