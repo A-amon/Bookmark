@@ -940,6 +940,7 @@ footer .footer__social:hover path {
   font-size: 1.5rem;
   text-align: center;
   margin-top: 100px;
+  font-weight: 500;
 }
 
 .faq-p{
@@ -956,7 +957,7 @@ details {
 }
 
 .summary {
-  border-top: 1px solid rgba(0, 0, 0, 0.5);
+  border-top: 1px solid rgba(145, 148, 161, 0.5);
   width: 45%;
   margin: auto;
 }
@@ -1034,6 +1035,7 @@ details > div > p {
   color: #5368df;
   background-color: white;
   border: 1px solid #5368df;
+  cursor: pointer;
 }
 
 .contact {
@@ -1070,6 +1072,7 @@ details > div > p {
   color: #fa5757;
   background-color: white;
   border: 1px solid #fa5757;
+  cursor: pointer;
 }
 
 .form-input {
@@ -1091,7 +1094,7 @@ details > div > p {
   width: 100%;
 }
 
-#email:focus {
+#email:focus-visible {
   border: 5px solid #fa5757;
   border-radius: 6px;
   -webkit-transition: 0.2s;
