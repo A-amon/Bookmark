@@ -244,6 +244,12 @@ input, button {
 
 .features__tabpanel {
   position: relative;
+  -webkit-transition: outline 0.5s;
+  transition: outline 0.5s;
+}
+
+.features__tabpanel:focus {
+  outline: 3px solid yellow;
 }
 
 .features__tabpanel::before {
@@ -937,12 +943,11 @@ footer .footer__social:hover path {
 
 /* FAQs section */
 .faq-header {
-  font-size: 1.5rem;
   text-align: center;
-  margin-top: 100px;
+  margin-top: 3rem;
 }
 
-.faq-p{
+body > p {
   margin-bottom: 4rem;
   margin-top: 1.5rem;
   padding-left: 30%;
@@ -1046,7 +1051,7 @@ details > div > p {
   color: white;
   font-size: 2rem;
   font-size: bold;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   padding-left: 30%;
   padding-right: 30%;
 }
@@ -1055,7 +1060,7 @@ details > div > p {
   text-align: center;
   letter-spacing: 6px;
   color: white;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
 .check-btn {

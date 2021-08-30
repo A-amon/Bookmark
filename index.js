@@ -86,6 +86,7 @@ setResizeListener()
 
 const tabs = document.querySelectorAll('.features__tab')
 const panels = document.querySelectorAll('.features__tabpanel')
+const tabList = document.querySelector('.features__tabs')
 
 /**
  * Handle tab click event
@@ -98,6 +99,41 @@ const handleTabClick = (event) => {
 
     selectTab(tab)
     showPanel(panelId)
+}
+
+/**
+ * Handle tab key pressed event
+ * Allows navigation of tabs via arrow key
+ * @param  {object} event
+ * @param  {number} currentInd
+ */
+const handleTabKey = (event, currentInd) => {
+    const key = event.keyCode
+    const tabsArray = Array.from(tabs)
+    const tabsLength = tabsArray.length
+
+    let nextInd = currentInd
+
+    switch (key) {
+        // Left arrow
+        case 37:
+            nextInd--
+            break
+        // Right arrow
+        case 39:
+            nextInd++
+            break
+        default:
+            break
+    }
+
+    if (nextInd > tabsLength - 1)
+        nextInd = 0
+    else if (nextInd < 0)
+        nextInd = tabsLength - 1
+
+    // Only focus on tab if nextInd changes
+    nextInd !== currentInd && tabsArray[nextInd].focus()
 }
 
 /**
@@ -119,6 +155,9 @@ const showPanel = (id) => {
     const panel = document.querySelector(`#${id}`)
     panel.removeAttribute('hidden')
     panel.focus()
+
+    const panelInd = Array.from(panels).indexOf(panel)
+    panel.addEventListener('keyup', event => handleTabKey(event, panelInd))
 }
 
 /**
@@ -145,6 +184,7 @@ const selectTab = (tab) => {
 for (let tab of tabs) {
     tab.addEventListener('click', handleTabClick)
 }
+
 const bars = document.querySelector(".bars")
 const dropDown = document.querySelector(".sb1")
 const close = document.querySelector(".close")
