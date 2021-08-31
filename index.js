@@ -185,21 +185,15 @@ for (let tab of tabs) {
     tab.addEventListener('click', handleTabClick)
 }
 
-<<<<<<< HEAD
 
-const bars = document.querySelector(".navbar__bars")
+const bars = document.querySelector(".navbar-toggle__bars")
 const dropDown = document.querySelector(".dropdown")
-const cross = document.querySelector(".navbar__cross")
-=======
-const bars = document.querySelector(".bars")
-const dropDown = document.querySelector(".sb1")
-const close = document.querySelector(".close")
->>>>>>> 578d2b2266d89e61dd7f1c00665fa543da6df4b1
+const cross = document.querySelector(".navbar-toggle__cross")
 const color = document.querySelector(".color-change")
 const navbar = document.querySelector(".navbar")
 const logo = document.querySelector(".header__logo")
 const header = document.querySelector(".header")
-
+const navbartoggle = document.querySelector('.navbar-toggle')
 /*
 * Show/ hide nav dropdown
 *
@@ -207,28 +201,28 @@ const header = document.querySelector(".header")
 *
 * Handle hamburger button click event  
 */
-bars.addEventListener("click", function () {
+navbartoggle.addEventListener("click", function () {
     dropDown.classList.toggle("change")
-    bars.classList.remove("navbar__show")
-    cross.classList.add("navbar__show")
-    header.classList.add("color-change")
-    logo.classList.add("header__logo-change--color")
+    navbartoggle.classList.toggle("navbar-show")
+    navbartoggle.classList.toggle("navbar-toggle__cross")
+    header.classList.toggle("color-change")
+    logo.classList.toggle("header__logo-change--color")
 
 })
 
 /*
 * Handle close button click event
 */
-cross.addEventListener("click", function () {
-    dropDown.classList.toggle("change")
-    cross.classList.remove("navbar__show")
-    bars.classList.add("navbar__show")
-    bars.classList.remove("color-change")
-    header.classList.remove("color-change")
-    logo.classList.remove("header__logo-change--color")
+// cross.addEventListener("click", function () {
+//     dropDown.classList.toggle("change")
+//     navbartoggle.classList.remove("navbar-show")
+//     navbartoggle.classList.add("navbar-show")
+//     bars.classList.remove("color-change")
+//     header.classList.remove("color-change")
+//     logo.classList.remove("header__logo-change--color")
 
 
-})
+// })
 
 
 function validation(event) {

@@ -384,7 +384,6 @@ footer{
   align-items: center;
   background-color:$c-white;
   padding: 0 1rem;
-  border: 2px solid gold;
 
 z-index: 1;
   &__logo{
@@ -417,33 +416,35 @@ z-index: 1;
   @include laptop{
     width: 1000px;
   }
-  &__toggle{
+}
+.navbar-toggle{
     background-color: transparent;
     border: none;
   }
-  &__img {
+  .navbar-toggle__img {
     display: none;
   }
-  &__show {
-    display: inline-block;
+  .navbar-show .navbar-toggle__bars {
+    display: block;
 
     @include laptop {
       display: none;
     }
   }
-  
-  &__bars {
+  .navbar-toggle:not(.navbar-show) .navbar-toggle__cross{
+    display: block;
+  }
+  .navbar-toggle__bars {
     background-color: $c-white;
 
     @include laptop{
       display: none;
     }
   }
-}
+
 
 
 .dropdown {
-  
   display: none;
   opacity: .977;
   background-color: $c-verydarkblue;
@@ -548,6 +549,18 @@ color:$c-verydarkblue ;
 }
 }
 .change{
+  animation: slidein 1s 1 ;
+
+    @keyframes slidein {
+      from {
+        transform: translateY(100%);
+      }
+    
+      to {
+        transform: translateY(0%);
+      }
+    }
+
   //100vh = full screen height
   //90px =  header height
   height: calc( 100vh - 90px);
