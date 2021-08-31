@@ -202,6 +202,12 @@
 
     &__tabpanel{
         position: relative;
+        transition:outline 0.5s;
+
+        &:focus{
+          outline:3px solid yellow;
+        }
+
         &::before{
             content:"";
             height:250px;
@@ -368,112 +374,197 @@ footer{
         }
     }
 }
-
-
-.logo-change{
-  filter: invert(80%) sepia(50%) saturate(2%) hue-rotate(18deg)
-  brightness(228%) contrast(100%);
- @include laptop{
-  filter: none;
- }
-}
-.navbar {
-  position: relative;
-  align-items: center;
-  height: 100px;
-  background-color: $c-white;
+.header{
+  position: absolute;
+  width: 100%;
+  height: 90px;
   display: flex;
+  flex-direction:row;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  &-toggle {
-    background-color: transparent;
-    border: none;
-    @include laptop{
-      display: none;
-   
-    }
-  }
-  @include laptop {
-    align-content: center;
-    background-color: $c-white;
-    margin-left: 2.5rem;
- 
+  background-color:$c-white;
+  padding: 0 1rem;
+  border: 2px solid gold;
 
-    &-btn {
-      display: inline-block;
-      margin: 0 auto;
-      border: none;
-    }
+z-index: 1;
+  &__logo{
+
+}
+  &__logo-change--color{
+    filter: invert(100%) sepia(50%) saturate(2%) hue-rotate(18deg)
+    brightness(228%) contrast(100%);
+    @include laptop{
+      filter: none;
+     }
   }
 }
 .color-change{
-  background-color: $c-verydarkblue;
-  @include laptop{
-    background-color: $c-white;
+    background-color: $c-verydarkblue;
+    @include laptop{
+      background-color: $c-white;
+    }
   }
-}
-.img {
-  display: none;
-
-  /*
+ /*
   * Show/ hide hamburger and close icons
   * Hide icons when >= tablet size
   */
-  &.show {
+.navbar{
+  align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  @include laptop{
+    width: 1000px;
+  }
+  &__toggle{
+    background-color: transparent;
+    border: none;
+  }
+  &__img {
+    display: none;
+  }
+  &__show {
     display: inline-block;
 
     @include laptop {
       display: none;
     }
   }
-  @include laptop {
-    display: none;
-  }
-}
-.close{
-  background-color: $c-verydarkblue;
+  
+  &__bars {
+    background-color: $c-white;
 
+    @include laptop{
+      display: none;
+    }
+  }
 }
-.bars {
-background-color: $c-white;
 
-  @include tablet {
-    display: none;
-  }
-  @include laptop{
-    display: none;
-  }
-}
+
 .dropdown {
-  height: 729px;
+  
   display: none;
   opacity: .977;
   background-color: $c-verydarkblue;
   @include tablet{
-    height: 690;
+    height: 690px;
   }
-  @include laptop {
+          @include laptop {
     width: 500px;
     display: block;
     margin: 0;
     height: fit-content;
     background-color: $c-white;
   }
-}
 
-.change {
+    
+  &__list {
+    width: 100%;
+    font-size:18px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    list-style: none;
+    
+    @include laptop{
+      flex-direction:row;
+      justify-content: space-evenly;
+      width: 100%;
+    }
+  }
+  &__list-link {
+    color: $c-white;
+    text-decoration: none;
+    @include laptop{
+      color: $c-verydarkblue;
+    }
+  }
+  &__list-link:hover {
+    color: $c-softred;
+    @include laptop {
+      display: inline-flex;
+    }
+  }
+
+  &__list-item {
+    width: 90%;
+    text-align: center;
+    list-style: none;
+    font-weight: 400;
+    padding: 1rem 0; 
+  }
+  &__list-item:not(:last-child){
+    border-bottom: .00005px solid rgba(243, 241, 241, 0.2); 
+
+    text-transform: uppercase;
+      
+  }
+  &__list-item--top{
+    border-top: .00005px solid rgba(243, 241, 241, 0.2); 
+
+    @include laptop {
+      // width: 100px;
+    }
+  }
+
+  &__list-item--login  a{
+    display: block;
+    letter-spacing: .02rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    width: 100%;
+    margin-right:.25rem;
+    background-color: $c-verydarkblue;
+    color: $c-white;
+    padding: 0.4rem;
+    border-radius: 0.3rem;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
+    border: 2px solid $c-white;
+    @include laptop{
+      width: 120px;
+      padding: .49rem;
+      background-color: $c-softred;
+      border: 2px solid $c-softred;
+      color: $c-white;
+      margin: 0;
+
+    }
+  &__list-item--login:hover{
+    @include laptop{
+      background-color: $c-white;
+    }
+  }
+}
+&__list-item--link{
+text-decoration: none;
+color:$c-verydarkblue ;
+}
+&__list-item--link:hover{
+  background-color: $c-white;
+  color: $c-softred;
+  border: 2px solid $c-softred;
+}
+}
+.change{
+  //100vh = full screen height
+  //90px =  header height
+  height: calc( 100vh - 90px);
+  padding: 0 1rem;
+  border:  1px solid ;
   width: 100%;
   max-width: 100%;
   display: flex;
-  align-content: center;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
 
   /*
   * Dropdown list absolute to .navbar
   */
   position: absolute;
-  top: 100%;
+  top: 90%;
   left: 0;
   right: 0;
   margin: auto;
@@ -482,105 +573,66 @@ background-color: $c-white;
     width: 100%;
   }
   @include laptop {
-position: relative;
-top: 0;
-width: fit-content;
-margin: 0 0 0 auto;
+    position: relative;
+    top: 0;
+    width: fit-content;
+    margin: 0 0 0 auto;
+      }
+    }
+    .hero-main{
+      display: flex;
+      position:relative;
 
+      // blue shape
+      &::before{
+        content:'';
+        width: 70%;
+        height:80%;
+        align-items: center;
+        background-color: $c-softblue;
+        border-radius:100px 0 0 100px;
+        margin-left: auto;
+        position:absolute;
+        top:50px;
+        right:0;
+        z-index:-1;
+      }
    
-  }
-}
-.dropdown-list {
-  width: 80%;
+      @include laptop{
+        border-radius:100px 0 0 100px; 
+        margin-top: 4.8rem;
+      }
+
+      // Hero image
+      &__img{
+        width:100%;
+        // to ensure it scales accordingly
+        object-fit:contain;
+        margin-right:auto;
+        @include tablet{
+          width: 430px;
+        }
+        
+        @include laptop{
+          width: 500px;
+        }
+      }
+    }
+
+.icons {
+  align-items: flex-end;
+  width:20px;
   display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  list-style: none;
-
-  padding: 0;
-  @include laptop{
-    flex-direction:row;
-    justify-content: space-evenly;
-width: 100%;
-    
-  }
-}
-.dropdown-link {
-  color: $c-white;
-  text-decoration: none;
-  @include laptop{
-    color: $c-verydarkblue;
-  }
-  
-}
-.dropdown-link:hover {
-  color: $c-softred;
-  @include laptop {
-    display: inline-flex;
-    
-  }
-}
-.dropdown-list__item {
-  width: 100%;
-  text-align: center;
-  list-style: none;
-  font-weight: 400;
-  padding: 1rem; 
-  border-bottom: .00005px solid rgba(243, 241, 241, 0.2); 
-  text-transform: uppercase;
-@include laptop{
-
-}
-&.dropdown-list__item--top{
-  border-top: .00005px solid rgba(243, 241, 241, 0.2); 
-}
-  @include laptop {
-    width: 100px;
-    
-  }
-
-.dropdown-list__item:hover {
-  @include tablet{
-  }
-}
-}
-.login-btn{
-  font-size: 18px;  
-  letter-spacing: .02rem;
-  font-weight: 400;
-  text-transform: uppercase;
-  width: 100%;
-  margin-right:.25rem;
-  background-color: $c-verydarkblue;
-  color: $c-white;
-  padding: 0.4rem;
-  border-radius: 0.3rem;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
-  border: 2px solid $c-white;
-  @include laptop{
-    width: 120px;
-    background-color: $c-softred;
-    padding: .69rem;
-    background-color: $c-softred;
-    border: 2px solid $c-softred;
-    margin: 0;
-
-  }
-}
-.login-btn:hover{
-  background-color: $c-white;
-  color: $c-softred;
-  border: 2px solid $c-softred;
-}
-
-.icons{
-  padding-top:19rem ;
-  display: flex;
+  // Flex:1 takes up remaining height (if flex-direction:column)
+  flex: 1;
   justify-content: center;
+  padding: 4rem;
   gap: $margin + 1;
 @include laptop{
   display: none;
+}
+&__img{
+  height: 25px;
 }
 }
 //--hero--section--//
@@ -589,61 +641,25 @@ width: 100%;
   @include laptop{
     display: flex;
     flex-direction: row-reverse;
+    justify-content:flex-start;
+    align-items:center;
   }
-}
-.image-container{
-  position: relative;
-  display: flex;
-  width: 85%;
-  height: 200px;
-  align-items: center;
-  background-color: $c-softblue;
-  border-radius:100px 0 0 100px;
-  margin-left: 3.5rem;
-  @include tablet{
-  height: 400;
-  margin-left: 14.25rem;
-  width: 70%;
-  }
-  @include laptop{
-  border-radius:100px 0 0 100px;  width: 90%;
-  margin-left: 12.8rem;
-  margin-top: 4.8rem;
-  height: 200px;
-  width: 30%;
-}
-  &::before {
-    content: "";
-    position: absolute;
-    top: -35%;
-    right: 0;
-    left: -16.9%;
-    bottom: 0;
-    background-image: $background-image;
-    width: 370px;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: top center;
-    @include tablet{
-      width: 430px;
-      top: -60%;
-      right: 0;
-      left: -20.4%;
-      bottom: 0;
-    }
-    @include laptop{
-      width: 430px;
-      top: -55%;
-      right: 0;
-      left: -50.2%;
-      bottom: 0;
-      
-    }
-  }
-}
 
-.hero-tittle {
-  width: 347px;
+  &-main, &__body{
+    width:100%;
+  }
+
+
+  @include laptop{
+    flex:1;
+    &__body{
+      padding-left:5rem;
+    }
+  }
+
+
+&__tittle {
+  max-width: 100%;
   font-size: 32px;
   text-align: center;
   font-weight: 500;
@@ -668,8 +684,8 @@ width: 100%;
   }
 }
 
-.hero-text {
-   width: 332px;
+&__text {
+   max-width: 100%;
    display: block;
    text-align: center;
    color: $c-grayishblue;
@@ -680,12 +696,12 @@ width: 100%;
 
   }
   @include laptop{
-    // width: 432px ;
+     width: 432px ;
     text-align:start;
     margin: 1rem;
   }
 }
-.btn-container {
+&__btn-container {
   margin-top: 2rem;
   width: 100%;
   display: flex;
@@ -702,7 +718,8 @@ width: 100%;
   margin: 1rem;
 }
 }
-.hero__btn {
+
+&__btn {
   font-size: 14px;
   width: 50%;
   margin-right:.25rem;
@@ -725,7 +742,7 @@ width: 100%;
     border-radius: .25rem;
   }
 }
-.hero__btn--white {
+&__btn--white {
   background-color: $c-off-white;
   color: $c-verydarkblue;
   border: 1px solid $c-off-white;
@@ -736,15 +753,16 @@ width: 100%;
     color: $c-verydarkblue;
   }
 }
-.hero__btn:hover{
+&__btn:hover{
   border: 1px solid $c-softblue;
   background-color: $c-white;
   color: $c-softblue;
 }
-.hero__btn--white:hover{
+&__btn--white:hover{
   border: 1px solid $c-verydarkblue;
   background-color: $c-white;
   color: $c-verydarkblue;
+}
 }
 /* FAQs section */
 .faq-header {

@@ -86,6 +86,7 @@ setResizeListener()
 
 const tabs = document.querySelectorAll('.features__tab')
 const panels = document.querySelectorAll('.features__tabpanel')
+const tabList = document.querySelector('.features__tabs')
 
 /**
  * Handle tab click event
@@ -98,6 +99,41 @@ const handleTabClick = (event) => {
 
     selectTab(tab)
     showPanel(panelId)
+}
+
+/**
+ * Handle tab key pressed event
+ * Allows navigation of tabs via arrow key
+ * @param  {object} event
+ * @param  {number} currentInd
+ */
+const handleTabKey = (event, currentInd) => {
+    const key = event.keyCode
+    const tabsArray = Array.from(tabs)
+    const tabsLength = tabsArray.length
+
+    let nextInd = currentInd
+
+    switch (key) {
+        // Left arrow
+        case 37:
+            nextInd--
+            break
+        // Right arrow
+        case 39:
+            nextInd++
+            break
+        default:
+            break
+    }
+
+    if (nextInd > tabsLength - 1)
+        nextInd = 0
+    else if (nextInd < 0)
+        nextInd = tabsLength - 1
+
+    // Only focus on tab if nextInd changes
+    nextInd !== currentInd && tabsArray[nextInd].focus()
 }
 
 /**
@@ -119,6 +155,9 @@ const showPanel = (id) => {
     const panel = document.querySelector(`#${id}`)
     panel.removeAttribute('hidden')
     panel.focus()
+
+    const panelInd = Array.from(panels).indexOf(panel)
+    panel.addEventListener('keyup', event => handleTabKey(event, panelInd))
 }
 
 /**
@@ -145,12 +184,14 @@ const selectTab = (tab) => {
 for (let tab of tabs) {
     tab.addEventListener('click', handleTabClick)
 }
+
 const bars = document.querySelector(".bars")
 const dropDown = document.querySelector(".sb1")
 const close = document.querySelector(".close")
 const color = document.querySelector(".color-change")
 const navbar = document.querySelector(".navbar")
-const logo = document.querySelector(".logo")
+const logo = document.querySelector(".header__logo")
+const header = document.querySelector(".header")
 
 /*
 * Show/ hide nav dropdown
@@ -161,39 +202,36 @@ const logo = document.querySelector(".logo")
 */
 bars.addEventListener("click", function () {
     dropDown.classList.toggle("change")
-    bars.classList.remove("show")
-    close.classList.add("show")
+    bars.classList.remove("navbar__show")
+    cross.classList.add("navbar__show")
+    header.classList.add("color-change")
+    logo.classList.add("header__logo-change--color")
 
 })
 
 /*
 * Handle close button click event
 */
-close.addEventListener("click", function () {
+cross.addEventListener("click", function () {
     dropDown.classList.toggle("change")
-    close.classList.remove("show")
-    bars.classList.add("show")
+    cross.classList.remove("navbar__show")
+    bars.classList.add("navbar__show")
     bars.classList.remove("color-change")
+    header.classList.remove("color-change")
+    logo.classList.remove("header__logo-change--color")
+
+
 })
 
-bars.addEventListener("click", function () {
-    logo.classList.add("logo-change")
-    navbar.classList.add("color-change")
-})
 
-close.addEventListener("click", function () {
-    logo.classList.remove("logo-change")
-
-    navbar.classList.remove("color-change")
-})
-function validation (event) {
+function validation(event) {
     var form = document.getElementById("form");
     event.preventDefault();
     var email = document.getElementById("email").value;
     var text = document.getElementById("text");
     var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
     var form_input = document.querySelector('.form-input')
-    if (!email.match(pattern)) {
+    if (email.match(pattern)) {
         text.innerHTML = "Whoops, make sure it's an email";
         form_input.classList.add('error');
     }
