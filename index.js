@@ -37,7 +37,7 @@ const setStaggerAnimation = () => {
             gsap.to(elements, toValues)
         },
         onEnterBack: (elements) => {
-            gsap.to('.download__item', toValues)
+            gsap.to(elements, toValues)
         },
         onLeave: (elements) => {
             gsap.set(elements, fromValues)
@@ -225,7 +225,7 @@ navbartoggle.addEventListener("click", function () {
 // })
 
 
-function validation(event) {
+function validation (event) {
     var form = document.getElementById("form");
     event.preventDefault();
     var email = document.getElementById("email").value;
