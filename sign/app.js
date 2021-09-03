@@ -91,7 +91,7 @@ function signIn() {
     });
 }
 
-  let btnUp = document.getElementById("signUp");
-  btnUp.addEventListener("click", signUp);
-  let btnIn = document.getElementById("signIn");
-  btnIn.addEventListener("click", signIn);
+let btnUp = document.getElementById("signUp");
+btnUp.addEventListener("click", signUp);
+let btnIn = document.getElementById("signIn");
+btnIn.addEventListener("click", signIn);
