@@ -10,8 +10,6 @@ sign_in_btn.addEventListener("click", () => {
   container.classList.remove("sign-up-mode");
 });
 
-document.getElementById('userSIEmail').setAttribute('id', 'signUpSucceed');
-
 // this function will activated when click on the signUp button after fill the form
 function signUp() {
   // get the input variable value from the form
@@ -43,12 +41,10 @@ function signUp() {
         "Your account was created successfully, you can log in now."
       ).then((value) => {
         setTimeout(function () {
+          
+          window.location.replace(""); //this is for the bookmark page link
         }, 1000);
       });
-      document.getElementById('userSIEmail').focus();
-
-      console.log('focus in done');
-
     })
     .catch((error) => {
       // Handle Errors here.
@@ -59,7 +55,6 @@ function signUp() {
         title: "Error",
         text: "Error",
       });
-      document.getElementById('userSIEmail').removeAttribute('id');
     });
 }
 
