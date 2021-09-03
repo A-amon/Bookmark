@@ -210,21 +210,7 @@ navbartoggle.addEventListener("click", function () {
 
 })
 
-/*
-* Handle close button click event
-*/
-// cross.addEventListener("click", function () {
-//     dropDown.classList.toggle("change")
-//     navbartoggle.classList.remove("navbar-show")
-//     navbartoggle.classList.add("navbar-show")
-//     bars.classList.remove("color-change")
-//     header.classList.remove("color-change")
-//     logo.classList.remove("header__logo-change--color")
-
-
-// })
-
-
+// email input validation
 function validation (event) {
     var form = document.getElementById("form");
     event.preventDefault();
@@ -232,8 +218,9 @@ function validation (event) {
     var text = document.getElementById("text");
     var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
     var form_input = document.querySelector('.form-input')
-    if (email.match(pattern)) {
+    if (!email.match(pattern)) {
         text.innerHTML = "Whoops, make sure it's an email";
         form_input.classList.add('error');
     }
+    form.reset();
 }
