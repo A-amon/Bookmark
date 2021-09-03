@@ -41,13 +41,13 @@ const setStaggerAnimation = () => {
             gsap.to(elements, toValues)
         },
         onEnterBack: (elements) => {
-            gsap.to(elements, toValues)
+            gsap.to('.download__item', toValues)
         },
         onLeave: (elements) => {
             gsap.set(elements, fromValues)
         },
         onLeaveBack: (elements) => {
-            gsap.set(elements, fromValues)
+            gsap.set('.download__item', fromValues)
         }
     })
 }
