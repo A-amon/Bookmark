@@ -1,6 +1,4 @@
 
-
-
 var currentWidth
 var staggerAnim
 
@@ -224,16 +222,21 @@ const dropDown = document.querySelector(".dropdown");
 const header = document.querySelector(".header");
 const navbartoggle = document.querySelector('.navbar-toggle');
 const popup = document.querySelector(".popup")
+const logo = document.querySelector(".header__logo")
+
 
 navbartoggle.addEventListener("click", function () {
     dropDown.classList.toggle("change");
     navbartoggle.classList.toggle("navbar-show");
     navbartoggle.classList.toggle("navbar-toggle__cross");
-    header.classList.toggle("color-change",);
+    header.classList.toggle("color-change");
+    logo.classList.toggle("logo-change--color")
+
+
+    toggleScroll()
+
 
 })
-
-
 /*handling pop-up*/
 window.addEventListener("load", function () {
     this.setTimeout(function open(event) {
@@ -248,6 +251,7 @@ window.addEventListener("load", function () {
  */
 const toggleScroll = () => {
     document.body.classList.toggle('hide-scroll')
+
 }
 
 let close = document.querySelector(".popup-close");

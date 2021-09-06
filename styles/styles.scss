@@ -375,7 +375,8 @@ footer{
     }
 }
 .header{
-  position: absolute;
+  position: sticky;
+  top: 0;
   width: 100%;
   height: 90px;
   display: flex;
@@ -385,24 +386,26 @@ footer{
   background-color:$c-white;
   padding: 0 1rem;
 z-index: 1;
-  &__logo .color-change{
- filter: invert(100%) sepia(50%) saturate(2%) hue-rotate(18deg)
-    brightness(228%) contrast(100%);
 }
-  &__logo-change--color{
-   
+  
+.logo-change--color{
+     filter: invert(100%) sepia(125%) saturate(88%) hue-rotate(18deg)
+      brightness(228%) contrast(100%);
     @include laptop{
       filter: none;
      }
   }
-}
+  
 .color-change{
     background-color: $c-verydarkblue;
+  
+
     @include laptop{
       background-color: $c-white;
       border-bottom: none;
     }
   }
+  
  /*
   * Show/ hide hamburger and close icons
   * Hide icons when >= tablet size
@@ -448,7 +451,7 @@ z-index: 1;
   @include tablet{
     height: 690px;
   }
-          @include laptop {
+    @include laptop {
     width: 500px;
     display: block;
     margin: 0;
@@ -587,6 +590,7 @@ color:$c-verydarkblue ;
     top: 0;
     width: fit-content;
     margin: 0 0 0 auto;
+    display: nz;
       }
     }
 .hero-main{
@@ -887,6 +891,7 @@ color:$c-verydarkblue;
 
 .hide-scroll{
   overflow:hidden;
+  height: 100%;
 }
 // .stop-scrolling {
 //   height: 100%;
