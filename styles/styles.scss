@@ -943,3 +943,35 @@ margin: auto;
 .error #text{
 display: block;
 }
+
+/**********************
+* PARTICLES-JS
+************************/
+#particles-js{
+	position: fixed;
+	top:0;
+	left:0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	pointer-events: none;
+	animation:fadeInOut 2s 1 forwards ease-out;
+}
+
+/*
+* Scale up then fade out
+*/
+@keyframes fadeInOut {
+	0%{
+		border-radius: 50%;
+		transform:scale(0);
+	}
+	25%{
+		transform:scale(1);
+		border-radius: 0;
+		opacity:1;
+	}
+	100%{
+		opacity:0;
+	}
+}
