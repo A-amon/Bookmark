@@ -1,3 +1,4 @@
+
 var currentWidth
 var staggerAnim
 
@@ -212,46 +213,93 @@ for (let tab of tabs) {
 	tab.addEventListener('click', handleTabClick)
 }
 
-
-const bars = document.querySelector(".navbar-toggle__bars")
-const dropDown = document.querySelector(".dropdown")
-const cross = document.querySelector(".navbar-toggle__cross")
-const color = document.querySelector(".color-change")
-const navbar = document.querySelector(".navbar")
-const logo = document.querySelector(".header__logo")
-const header = document.querySelector(".header")
-const navbartoggle = document.querySelector('.navbar-toggle')
 /*
 * Show/ hide nav dropdown
-*
-*
-*
 * Handle hamburger button click event  
 */
+
+const dropDown = document.querySelector(".dropdown");
+const header = document.querySelector(".header");
+const navbartoggle = document.querySelector('.navbar-toggle');
+const popup = document.querySelector(".popup")
+const logo = document.querySelector(".header__logo")
+
+
 navbartoggle.addEventListener("click", function () {
-	dropDown.classList.toggle("change")
-	navbartoggle.classList.toggle("navbar-show")
-	navbartoggle.classList.toggle("navbar-toggle__cross")
-	header.classList.toggle("color-change")
-	logo.classList.toggle("header__logo-change--color")
+	dropDown.classList.toggle("change");
+	navbartoggle.classList.toggle("navbar-show");
+	navbartoggle.classList.toggle("navbar-toggle__cross");
+	header.classList.toggle("color-change");
+	logo.classList.toggle("logo-change--color")
+
+
+	toggleScroll()
+
 
 })
+/*handling pop-up*/
+window.addEventListener("load", function () {
+	this.setTimeout(function open (event) {
+		popup.classList.toggle("popup-add");
 
-/*
-* Handle close button click event
-*/
-// cross.addEventListener("click", function () {
-//     dropDown.classList.toggle("change")
-//     navbartoggle.classList.remove("navbar-show")
-//     navbartoggle.classList.add("navbar-show")
-//     bars.classList.remove("color-change")
-//     header.classList.remove("color-change")
-//     logo.classList.remove("header__logo-change--color")
+		toggleScroll()
+	}, 1000)
+});
 
+/**
+ * Enable/Disable scroll on body
+ */
+const toggleScroll = () => {
+	document.body.classList.toggle('hide-scroll')
 
-// })
+}
 
+let close = document.querySelector(".popup-close");
+close.addEventListener("click", function () {
+	document.querySelector(".popup").remove(".popup-add")
+	close.classList.toggle("popup-close")
+	document.querySelector(".overlay").remove(".active")
 
+	toggleScroll()
+});
+
+//enabling and disabling scroll//
+//enabling and disabling scroll//
+// const body = document.querySelector("body")
+// // const mode = document.querySelector(".mode");
+// const overlay = document.querySelector(".overlay")
+// document.body.addEventListener('scroll', function (e) {
+//     console.log(overlay);
+
+//     overlay.classList.toggle("stop-scrolling");
+//     if (!overlay.classList.contains("stop-scrolling")) {
+//         document.body.style.overflow = "hidden"
+//     } else {
+//         document.body.style.overflow = "auto";
+//     }
+// });
+
+function displayQuote (response) {
+
+	// author.innerHTML = `<script>alert('hello');</script>`
+	// quote.textContent = `<script>alert('hello');</script>`
+
+	/**
+	 * Setup particles js animation
+	 */
+	particlesJS.load('particles-js', 'particles.json', () => {
+		let quote = document.querySelector(".quote-body__text")
+		let author = document.querySelector(".quote-body__author")
+		quote.textContent = response.data.data[0].quoteText
+		author.textContent = response.data.data[0].quoteAuthor
+	})
+
+}
+
+let apiUrl = " https://quote-garden.herokuapp.com/api/v3/quotes/random";
+axios.get(apiUrl).then(displayQuote);
+
+// email input validation
 function validation (event) {
 	var form = document.getElementById("form");
 	event.preventDefault();
@@ -259,15 +307,9 @@ function validation (event) {
 	var text = document.getElementById("text");
 	var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
 	var form_input = document.querySelector('.form-input')
-	if (email.match(pattern)) {
+	if (!email.match(pattern)) {
 		text.innerHTML = "Whoops, make sure it's an email";
 		form_input.classList.add('error');
 	}
+	form.reset();
 }
-
-/**
- * Setup particles js animation
- */
-particlesJS.load('particles-js', 'particles.json', () => {
-	console.log(particlesJS)
-})

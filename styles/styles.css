@@ -427,7 +427,9 @@ footer .footer__social:hover path {
 }
 
 .header {
-  position: absolute;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   width: 100%;
   height: 90px;
   display: -webkit-box;
@@ -448,13 +450,13 @@ footer .footer__social:hover path {
   z-index: 1;
 }
 
-.header__logo-change--color {
-  -webkit-filter: invert(100%) sepia(50%) saturate(2%) hue-rotate(18deg) brightness(228%) contrast(100%);
-          filter: invert(100%) sepia(50%) saturate(2%) hue-rotate(18deg) brightness(228%) contrast(100%);
+.logo-change--color {
+  -webkit-filter: invert(100%) sepia(125%) saturate(88%) hue-rotate(18deg) brightness(228%) contrast(100%);
+          filter: invert(100%) sepia(125%) saturate(88%) hue-rotate(18deg) brightness(228%) contrast(100%);
 }
 
 @media screen and (min-width: 1020px) {
-  .header__logo-change--color {
+  .logo-change--color {
     -webkit-filter: none;
             filter: none;
   }
@@ -467,6 +469,7 @@ footer .footer__social:hover path {
 @media screen and (min-width: 1020px) {
   .color-change {
     background-color: white;
+    border-bottom: none;
   }
 }
 
@@ -667,8 +670,6 @@ footer .footer__social:hover path {
 }
 
 .change {
-  -webkit-animation: slidein 1s 1;
-          animation: slidein 1s 1;
   height: calc( 100vh - 90px);
   padding: 0 1rem;
   border: 1px solid;
@@ -685,6 +686,7 @@ footer .footer__social:hover path {
       -ms-flex-align: center;
           align-items: center;
   z-index: 1;
+  border-top: none;
   /*
   * Dropdown list absolute to .navbar
   */
@@ -694,6 +696,8 @@ footer .footer__social:hover path {
   right: 0;
   margin: auto;
   z-index: 1;
+  -webkit-animation: slidein 1s 1;
+          animation: slidein 1s 1;
 }
 
 @-webkit-keyframes slidein {
@@ -732,6 +736,7 @@ footer .footer__social:hover path {
     width: -moz-fit-content;
     width: fit-content;
     margin: 0 0 0 auto;
+    display: nz;
   }
 }
 
@@ -984,6 +989,116 @@ footer .footer__social:hover path {
   color: #252b46;
 }
 
+.popup {
+  background-color: transparent;
+  width: 300px;
+  height: 350px;
+  padding: 30px 30px;
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  border-radius: 8px;
+  display: none;
+  z-index: 20;
+}
+
+@media screen and (min-width: 768px) {
+  .popup {
+    width: 350px;
+  }
+}
+
+@media screen and (min-width: 1020px) {
+  .popup {
+    width: 550px;
+  }
+}
+
+.popup__img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.popup__quote {
+  position: absolute;
+  background-color: white;
+  -webkit-box-shadow: 0px 4px 4px rgba(148, 14, 14, 0.2);
+          box-shadow: 0px 4px 4px rgba(148, 14, 14, 0.2);
+  border-radius: 50%;
+  display: block;
+  margin: auto;
+  width: 50px;
+  height: 50px;
+}
+
+.fas {
+  position: relative;
+  top: 30%;
+  right: -30%;
+  left: 30%;
+  margin: 0 auto;
+}
+
+.fa-quote-left {
+  color: #252b46;
+}
+
+.popup .popup-close {
+  display: block;
+  margin: 0 0 20px auto;
+  border: none;
+  background-color: transparent;
+}
+
+.quote-body {
+  padding: 3rem;
+  background-color: white;
+  color: #fa5757;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 4px 4px rgba(148, 14, 14, 0.2);
+          box-shadow: 0px 4px 4px rgba(148, 14, 14, 0.2);
+}
+
+.popup .quote-body__text {
+  text-align: justify;
+  margin: 20px 0;
+  line-height: -3.2;
+}
+
+.popup-add {
+  display: block;
+}
+
+.overlay {
+  position: fixed;
+  top: 0%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #252b46;
+  opacity: .77;
+  pointer-events: none;
+  z-index: 1;
+  height: 100%;
+  pointer-events: all;
+}
+
+.overlay.active {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hide-scroll {
+  overflow: hidden;
+  height: 100%;
+}
+
 /* FAQs section */
 .faq-header {
   text-align: center;
@@ -1200,8 +1315,8 @@ details > div > p {
   width: 100%;
   z-index: 1;
   pointer-events: none;
-  -webkit-animation: fadeInOut 2s 1 forwards ease-out;
-          animation: fadeInOut 2s 1 forwards ease-out;
+  -webkit-animation: fadeInOut 2s 1s 1 forwards ease-out;
+          animation: fadeInOut 2s 1s 1 forwards ease-out;
 }
 
 /*

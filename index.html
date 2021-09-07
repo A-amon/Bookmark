@@ -6,9 +6,14 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta property="og:title" content="Bookmark">
+
 	<meta property="og:description" content="Bookmark site">
+	<script src="https://kit.fontawesome.com/e7403e46d7.js" crossorigin="anonymous"></script>
+
 	<link rel="shortcut icon" href="./assets/icons/favicon-32x32.png" type="image/png">
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<link rel="stylesheet" href="./styles/styles.css">
+
 	<title>Bookmark</title>
 </head>
 
@@ -34,23 +39,23 @@
 						<a class="dropdown__list-link" href="#"> Contact</a>
 					</li>
 					<li class="dropdown__list-item dropdown__list-item--login">
-						<a class="dropdown__list-item--link" href="">login</a>
+						<a class="dropdown__list-item--link" href="sign/index.html">login</a>
 					</li>
 				</ul>
 				<div class="icons">
-					<img class="icons__img" src="./assets/icons/icon-facebook.svg" alt="">
-					<img class="icons__img" src="./assets/icons/icon-twitter.svg" alt="">
+					<a href="https://www.facebook.com/"><img class="icons__img" src="./assets/icons/icon-facebook.svg"
+							alt=""></a>
+					<a href="https://twitter.com"> <img class="icons__img" src="./assets/icons/icon-twitter.svg"
+							alt=""></a>
 				</div>
 			</div>
 		</nav>
 
-
 	</header>
-
 	<main>
+
 		<!--hero-section-->
 		<section class="hero">
-
 			<div class="hero-main">
 				<img class="hero-main__img" src="./assets/images/illustration-hero.svg" alt="">
 			</div>
@@ -61,13 +66,27 @@
 					Open a new browser tab and see your sites load instantly.
 					Try it for free.</p>
 
-
-
 				<div class="hero__btn-container">
 					<button class="hero__btn">Get it on Chrome</button>
 					<button class="hero__btn hero__btn--white"> Get it on Firefox</button>
 				</div>
 			</div>
+			<!--pop-up-->
+			<div class="popup mode">
+				<div class="popup__img">
+					<button class="popup-close"><img src="./assets/icons/icon-close.svg" alt=""></button>
+					<div class="popup__quote"><i class="fas fa-quote-left"></i></div>
+				</div>
+				<div class="quote-body">
+					<h1 class="quote-body__title">Quote</h1>
+					<p class="quote-body__text"> Lorem,ipsum dolor sit aOur backward-compatible APIs are designed to
+						provide quick relief if
+						you're
+						currently
+					<p class="quote-body__author">name</p>
+				</div>
+			</div>
+			<div class="overlay"></div>
 		</section>
 		<section class="features">
 			<div class="container">
@@ -214,7 +233,8 @@
 		</section>
 		<!-- faq section -->
 		<h2 class="faq-header">Frequently Asked Questions</h2>
-		<p class="faq-p">Here are some of our FAQs. If you have any other questions you'd like answered please feel free
+		<p class="faq-p">Here are some of our FAQs. If you have any other questions you'd like answered please feel
+			free
 			to email us.
 		</p>
 
@@ -224,7 +244,8 @@
 				<div class="details-content">
 					<p>Possimus fugiat suscipit temporibus adipisci natus dolorem pariatur asperiores tenetur
 						cupiditate,
-						iure exercitationem libero reprehenderit blanditiis nostrum repudiandae aspernatur voluptates
+						iure exercitationem libero reprehenderit blanditiis nostrum repudiandae aspernatur
+						voluptates
 						magni
 						quasi nemo obcaecati voluptate ratione, officia porro. Molestias, corrupti.</p>
 				</div>
@@ -236,7 +257,8 @@
 				<div class="details-content">
 					<p>Possimus fugiat suscipit temporibus adipisci natus dolorem pariatur asperiores tenetur
 						cupiditate,
-						iure exercitationem libero reprehenderit blanditiis nostrum repudiandae aspernatur voluptates
+						iure exercitationem libero reprehenderit blanditiis nostrum repudiandae aspernatur
+						voluptates
 						magni
 						quasi nemo obcaecati voluptate ratione, officia porro. Molestias, corrupti.</p>
 				</div>
@@ -247,7 +269,8 @@
 				<summary>Is there a mobile app?</summary>
 				<div class="details-content">
 					<p>Pariatur impedit in, a dolore culpa cumque quod magni, eligendi sunt, sequi rem nesciunt?
-						Explicabo quaerat fugiat reiciendis, rem delectus labore ea alias, vel et dolorem velit? Alias,
+						Explicabo quaerat fugiat reiciendis, rem delectus labore ea alias, vel et dolorem velit?
+						Alias,
 						quisquam culpa!</p>
 				</div>
 			</details>
@@ -260,7 +283,8 @@
 				<summary>What about other Chromium browsers?</summary>
 				<div class="details-content">
 					<p>Nostrum vero repudiandae natus praesentium aut vitae amet illo minima? Facilis cupiditate
-						doloremque deserunt? Provident, animi. Labore voluptatum provident eius nostrum quam est nisi
+						doloremque deserunt? Provident, animi. Labore voluptatum provident eius nostrum quam est
+						nisi
 						cumque repudiandae, id dolor, sequi inventore.</p>
 				</div>
 			</details>
@@ -281,8 +305,6 @@
 				<input class="check-btn" type="submit" value="Contact Us">
 			</form>
 		</div>
-
-
 	</main>
 	<footer class="footer">
 		<div class="container">
@@ -335,7 +357,9 @@
 				</li>
 			</ul>
 		</div>
+
 	</footer>
+
 	<!--For particles js animation-->
 	<div id="particles-js"></div>
 	<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
@@ -343,6 +367,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/ScrollTrigger.min.js"></script>
 	<script src="./index.js"></script>
+
 </body>
 
 </html>
