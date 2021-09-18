@@ -1101,26 +1101,36 @@ footer .footer__social:hover path {
 
 /* FAQs section */
 .faq-header {
+  font-size: 1.5rem;
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 100px;
+  font-weight: 500;
 }
 
-body > p {
+.faq-p {
+  max-width: 600px;
   margin-bottom: 4rem;
   margin-top: 1.5rem;
-  padding-left: 30%;
-  padding-right: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   color: #9194a1;
 }
 
 details {
   max-width: 600px;
   margin: auto;
+  border-top: 1px solid rgba(145, 148, 161, 0.5);
 }
 
 .summary {
-  border-top: 1px solid rgba(0, 0, 0, 0.5);
-  width: 45%;
+  width: 90%;
   margin: auto;
 }
 
@@ -1137,13 +1147,14 @@ details > summary {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   padding-top: 1rem;
   padding-bottom: 1rem;
   font-size: 1.25rem;
   cursor: pointer;
   list-style: none;
+  padding: 1.6rem;
 }
 
 details > summary::after {
@@ -1164,7 +1175,7 @@ details > summary::after {
 details[open] > summary::after {
   content: url(/assets/icons/icon-arrow-red.svg);
   -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 svg:hover {
@@ -1173,6 +1184,7 @@ svg:hover {
 
 details > div > p {
   color: #9194a1;
+  text-align: center;
 }
 
 .wrapper {
@@ -1180,8 +1192,8 @@ details > div > p {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin-top: 4rem;
   margin-bottom: 4rem;
 }
@@ -1191,12 +1203,14 @@ details > div > p {
   background-color: #5368df;
   padding: 14px;
   border-radius: 6px;
+  border: none;
 }
 
 .faq-btn:hover {
   color: #5368df;
   background-color: white;
   border: 1px solid #5368df;
+  cursor: pointer;
 }
 
 .contact {
@@ -1208,17 +1222,23 @@ details > div > p {
   text-align: center;
   color: white;
   font-size: 2rem;
-  font-size: bold;
-  margin-bottom: 3rem;
-  padding-left: 30%;
-  padding-right: 30%;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .contact-p {
   text-align: center;
   letter-spacing: 6px;
   color: white;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .check-btn {
@@ -1227,12 +1247,14 @@ details > div > p {
   padding: 14px;
   border-radius: 6px;
   margin-left: 1.5rem;
+  border: none;
 }
 
 .check-btn:hover {
   color: #fa5757;
   background-color: white;
   border: 1px solid #fa5757;
+  cursor: pointer;
 }
 
 .form-input {
@@ -1240,21 +1262,43 @@ details > div > p {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   position: relative;
   width: 500px;
+}
+
+@media screen and (max-width: 30em) {
+  #form {
+    display: block !important;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: auto;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  .form-input {
+    width: 100%;
+    margin: auto;
+  }
+  .check-btn {
+    width: 100%;
+    margin: auto;
+    margin-top: 1rem;
+  }
 }
 
 #email {
   border-radius: 6px;
   padding: 16px 20px;
   line-height: 1;
-  position: relative;
   width: 100%;
+  border: none;
 }
 
-#email:focus {
+#email:focus-visible {
   border: 5px solid #fa5757;
   border-radius: 6px;
   -webkit-transition: 0.2s;
@@ -1279,17 +1323,17 @@ details > div > p {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin: auto;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .error::after {
   background-image: url(/assets/icons/icon-error.svg);
-  content: '';
+  content: "";
   height: 20px;
   width: 20px;
   display: block;
@@ -1303,7 +1347,6 @@ details > div > p {
 .error #text {
   display: block;
 }
-
 /**********************
 * PARTICLES-JS
 ************************/

@@ -901,120 +901,189 @@ color:$c-verydarkblue;
 /* FAQs section */
 
 .faq-header {
+  font-size: 1.5rem;
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 100px;
+  font-weight: 500;
 }
-body > p {
+
+.faq-p {
+  max-width: 600px;
   margin-bottom: 4rem;
   margin-top: 1.5rem;
-  padding-left: 30%;
-  padding-right: 30%;
-  color: hsl(229, 8%, 60%);
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  color: #9194a1;
+  
 }
 
 details {
   max-width: 600px;
   margin: auto;
+  border-top: 1px solid rgba(145, 148, 161, 0.5);
 }
+
 .summary {
-  border-top: 1px solid rgba(0, 0, 0, 0.5);
-  width: 45%;
+  width: 90%;
   margin: auto;
 }
 
 summary {
   position: relative;
 }
+
 summary:hover {
-  color: hsl(0, 94%, 66%);
+  color: #fa5757;
 }
 
 details > summary {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding-top: 1rem;
   padding-bottom: 1rem;
   font-size: 1.25rem;
   cursor: pointer;
   list-style: none;
+  padding: 1.6rem;
 }
+
 details > summary::after {
   content: url(/assets/icons/icon-arrow.svg);
   width: 1.5rem;
   height: 1.5rem;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
   transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
   position: absolute;
   right: 0;
-  
 }
+
 details[open] > summary::after {
   content: url(/assets/icons/icon-arrow-red.svg);
+  -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }
+
 svg:hover {
   fill: red;
 }
 
 details > div > p {
-  color: hsl(229, 8%, 60%);
+  color: #9194a1;
+  text-align: center;
 }
+
 .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   margin-top: 4rem;
   margin-bottom: 4rem;
 }
+
 .faq-btn {
   color: white;
-  background-color: hsl(231, 69%, 60%);
+  background-color: #5368df;
   padding: 14px;
   border-radius: 6px;
+  border:none;
 }
 
 .faq-btn:hover {
-  color: hsl(231, 69%, 60%);
+  color: #5368df;
   background-color: white;
-  border: 1px solid hsl(231, 69%, 60%);
+  border: 1px solid #5368df;
+  cursor: pointer;
 }
 
 .contact {
-  background-color: hsl(231, 69%, 60%);
+  background-color: #5368df;
   padding: 4rem;
 }
+
 .contact-header {
   text-align: center;
   color: white;
   font-size: 2rem;
-  font-size: bold;
-  margin-bottom: 3rem;
-  padding-left: 30%;
-  padding-right: 30%;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  display: flex;
+  justify-content: center;
 }
+
 .contact-p {
   text-align: center;
   letter-spacing: 6px;
   color: white;
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
+
 .check-btn {
   color: white;
-  background-color: hsl(0, 94%, 66%);
+  background-color: #fa5757;
   padding: 14px;
   border-radius: 6px;
   margin-left: 1.5rem;
+  border: none;
+}
 
-}
 .check-btn:hover {
-  color: hsl(0, 94%, 66%);
+  color: #fa5757;
   background-color: white;
-  border: 1px solid hsl(0, 94%, 66%);
+  border: 1px solid #fa5757;
+  cursor: pointer;
 }
+
 .form-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   position: relative;
   width: 500px;
+}
+
+@media screen and (max-width:30em){
+ #form{
+  display:block !important;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: auto;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+ }
+
+ .form-input{
+  width: 100%;
+  margin: auto;
+ }
+.check-btn{
+width: 100%;
+margin: auto;
+margin-top:1rem;
+
+}
+
 
 }
 
@@ -1022,15 +1091,18 @@ details > div > p {
   border-radius: 6px;
   padding: 16px 20px;
   line-height: 1;
-  position: relative;
   width: 100%;
+  border: none;
 }
-#email:focus {
-  border: 5px solid hsl(0, 94%, 66%);
+
+#email:focus-visible {
+  border: 5px solid #fa5757;
   border-radius: 6px;
+  -webkit-transition: 0.2s;
   transition: 0.2s;
   outline: none;
 }
+
 #text {
   padding: 8px;
   color: white;
@@ -1040,31 +1112,42 @@ details > div > p {
   position: absolute;
   top: 100%;
   left: 0;
-  background-color:hsl(0, 94%, 66%);
-
+  background-color: #fa5757;
 }
-#form{
+
+#form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   margin: auto;
-justify-content: center;
-}
-.error::after{
-background-image:url(/assets/icons/icon-error.svg);
-content: '';
-height: 20px;
-width: 20px;
-display: block;
-position: absolute;
-top: 0;
-bottom: 0;
-right: 10px;
-margin: auto;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
-.error #text{
-display: block;
+.error::after {
+  background-image: url(/assets/icons/icon-error.svg);
+  content: "";
+  height: 20px;
+  width: 20px;
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 10px;
+  margin: auto;
 }
+
+.error #text {
+  display: block;
+}
+/*# sourceMappingURL=styles.css.map */
+
+
+
 
 /**********************
 * PARTICLES-JS
